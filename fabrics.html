@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alasi — Fabric Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=alasi-mobile" />
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+<body class="fabric-page">
+  <nav class="navbar fabric-navbar scrolled" id="main-nav">
+    <a href="index.html#hero" class="brand-link" aria-label="Alasi home">
+      <img class="brand-logo" src="uploads/alasi-logo-transparent.png" alt="Alasi" />
+    </a>
+    <div class="nav-links">
+      <a href="index.html#products">Products</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="fabrics.html">Fabrics</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact" class="btn-outline" style="margin-right: 0;">Get a Quote</a>
+    </div>
+  </nav>
+
+  <main class="fabric-main">
+    <section class="fabric-hero">
+      <div class="fabric-hero-copy">
+        <p class="fabric-eyebrow">Alasi textile library</p>
+        <h1>Exact awning fabrics, seen on the real Desert system.</h1>
+        <p>
+          Browse the full Advance range with the original fabric textures and the Desert 3D awning model. Choose a colour family, then preview the selected fabric directly on the awning.
+        </p>
+      </div>
+      <div class="fabric-hero-meta">
+        <span>89 colours</span>
+        <span>Plain · Classics · Fantasy</span>
+        <span>Normal and resined finishes</span>
+      </div>
+    </section>
+
+    <section class="advance-catalog">
+      <div class="advance-shell">
+        <div class="advance-layout">
+          <aside class="advance-preview">
+            <div class="advance-preview-top">
+              <span>Live preview</span>
+              <span id="advance-model-code">80180520</span>
+            </div>
+            <model-viewer
+              id="advance-model"
+              src="uploads/copentek/models/desert-materials.glb"
+              camera-controls
+              auto-rotate
+              auto-rotate-delay="0"
+              rotation-per-second="8deg"
+              interaction-prompt="none"
+              touch-action="pan-y"
+              exposure="1.08"
+              shadow-intensity="0.9"
+              environment-image="neutral"
+              disable-zoom>
+            </model-viewer>
+            <div class="advance-model-caption">
+              <span id="advance-model-name">Desert by Gaviota</span>
+              <span>Drag to rotate</span>
+            </div>
+          </aside>
+
+          <div class="advance-panel">
+            <div class="advance-heading">
+              <div>
+                <p class="advance-kicker">Technical fabrics for outdoor use</p>
+                <h2>Advance Collection</h2>
+              </div>
+              <a class="advance-back" href="index.html">Back home</a>
+            </div>
+
+            <div class="advance-tabs" aria-label="Fabric collection">
+              <button class="advance-tab active" type="button" data-advance-group="plain">Plain</button>
+              <button class="advance-tab" type="button" data-advance-group="classics">Classics</button>
+              <button class="advance-tab" type="button" data-advance-group="fantasy">Fantasy</button>
+            </div>
+
+            <div class="advance-finish" aria-label="Fabric finish">
+              <button class="advance-finish-btn active" type="button" data-advance-coating="normal">Normal</button>
+              <button class="advance-finish-btn" type="button" data-advance-coating="resined">Resined</button>
+            </div>
+
+            <div class="advance-copy">
+              <p>
+                Water-repellent acrylic awning fabrics with colour stability, stain resistance, and a technical finish made for outdoor shade systems.
+              </p>
+              <button class="advance-tech" type="button" id="advance-tech-toggle">Technical characteristics</button>
+            </div>
+
+            <div class="advance-tech-panel" id="advance-tech-panel" hidden>
+              <div><strong>Composition</strong><span>100% solution-dyed acrylic fabric</span></div>
+              <div><strong>Weight</strong><span>295±5% gr/m2</span></div>
+              <div><strong>Width</strong><span>120±1% cm</span></div>
+              <div><strong>Water penetration</strong><span>&gt; 35 cm/H2O · UNE-EN 20811</span></div>
+              <div><strong>UV fastness</strong><span>7-8 Class/8 · EN ISO 105-B02</span></div>
+              <div><strong>Spray test</strong><span>5 Class/5 · UNE EN ISO 4920</span></div>
+            </div>
+
+            <div class="advance-status">
+              <span id="advance-count">0 colours</span>
+              <span id="advance-selection">Select a fabric</span>
+            </div>
+            <div class="advance-grid" id="advance-grid" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="app.js?v=advance-page"></script>
+</body>
+</html>
