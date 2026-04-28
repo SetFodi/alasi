@@ -24,7 +24,7 @@ export default function About() {
         </div>
         <div className="about-media" style={{ position: 'relative' }}>
           <div style={{ aspectRatio: '4/5', overflow: 'hidden', borderRadius: 1 }} className="photo-card">
-            <img src="/uploads/Setting_The_elegant_soft-frame_Nano_Banana_Pro_73429.jpg" alt="Batumi terrace" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src="/uploads/awning-chatgpt.jpg" alt="Batumi terrace" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
         </div>
       </div>

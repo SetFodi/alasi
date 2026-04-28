@@ -1,8 +1,8 @@
 const products = [
-  { img: '/uploads/The_scene_features_an_awning_w_Nano_Banana_Pro_77361.jpg', geo: 'გასაჭიმი მარქიზა', name: 'Retractable Awnings', desc: 'Motorized and manual fold-arm systems for full sun control. Ideal for residential terraces and hotel spaces.' },
+  { img: '/uploads/Capture_an_architectural_shot__Nano_Banana_Pro_18949.jpg', geo: 'გასაჭიმი მარქიზა', name: 'Retractable Awnings', desc: 'Motorized and manual fold-arm systems for full sun control. Ideal for residential terraces and hotel spaces.' },
   { img: '/uploads/Setting_The_elegant_soft-frame_Nano_Banana_Pro_73429.jpg', geo: 'აივნის მარქიზა', name: 'Balcony Awnings', desc: 'Compact, elegant shade for balconies. Optional wind sensors and smooth remote operation.' },
-  { img: '/uploads/Capture_an_architectural_shot__Nano_Banana_Pro_18949.jpg', geo: 'კაფე-ტერასა', name: 'Café & Restaurant Terraces', desc: 'Wide-span commercial awnings for high-traffic outdoor dining. Durable, branded, and long-lasting.' },
-  { img: '/uploads/Setting_The_elegant_soft-frame_Nano_Banana_Pro_73429.jpg', geo: 'პერგოლა', name: 'Pergola Shading Systems', desc: 'Louvered architectural pergolas offering year-round comfort with rain and UV protection.' },
+  { img: '/uploads/awning-chatgpt.jpg', geo: 'კაფე-ტერასა', name: 'Café & Restaurant Terraces', desc: 'Wide-span commercial awnings for high-traffic outdoor dining. Durable, branded, and long-lasting.' },
+  { img: '/uploads/The_scene_features_an_awning_w_Nano_Banana_Pro_77361.jpg', geo: 'პერგოლა', name: 'Pergola Shading Systems', desc: 'Louvered architectural pergolas offering year-round comfort with rain and UV protection.' },
 ];
 
 export default function Products() {

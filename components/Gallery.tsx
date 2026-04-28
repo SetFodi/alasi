@@ -39,8 +39,8 @@ export default function Gallery() {
 
         <div className="gallery-grid-secondary" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 6, marginTop: 6 }}>
           {[
-            { img: '/uploads/Capture_an_architectural_shot__Nano_Banana_Pro_18949.jpg', cat: 'Hospitality', title: 'Rooftop Lounge · Tbilisi' },
-            { img: '/uploads/The_scene_features_an_awning_w_Nano_Banana_Pro_77361.jpg', cat: 'Residential', title: 'Sunset Terrace · Adjara', pos: 'center 60%' },
+            { img: '/uploads/awning-chatgpt.jpg', cat: 'Hospitality', title: 'Rooftop Lounge · Tbilisi' },
+            { img: '/uploads/Capture_an_architectural_shot__Nano_Banana_Pro_18949.jpg', cat: 'Residential', title: 'Sunset Terrace · Adjara', pos: 'center 60%' },
             { img: '/uploads/Setting_The_elegant_soft-frame_Nano_Banana_Pro_73429.jpg', cat: 'Residential', title: 'Mountain Villa · Mestia', pos: 'center 80%' },
           ].map((c, i) => (
             <div key={i} className="photo-card gallery-card" style={{ height: 320, position: 'relative', overflow: 'hidden', cursor: 'pointer', background: 'var(--c-very-dark)', borderRadius: 3 }}>

@@ -17,7 +17,13 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  background: var(--c-very-dark);
+}
+html.fabric-page {
+  background: #120908;
+}
 body {
   background: var(--c-dark-brown);
   color: var(--c-cream);
@@ -441,6 +447,15 @@ body {
 .advance-swatch-code { color: rgba(216,196,168,0.52); display: block; font-size: 11px; margin-top: 5px; }
 
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }
+
+/* Page transition */
+.page-enter {
+  animation: pageEnter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
 @media (max-width: 1180px) {
   .fabric-hero, .advance-layout { grid-template-columns: 1fr; }

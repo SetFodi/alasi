@@ -1,4 +1,3 @@
-import Preloader from '@/components/Preloader';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Marquee from '@/components/Marquee';
@@ -14,7 +13,6 @@ import RevealObserver from '@/components/RevealObserver';
 export default function Home() {
   return (
     <>
-      <Preloader />
       <Navbar />
       <Hero />
       <Marquee />
