@@ -34,7 +34,21 @@ export default function Footer({ content = defaultContent }: { content?: SiteCon
           <div>
             <p style={{ fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--c-sand)', marginBottom: 18, opacity: 0.5 }}>{copy.contactTitle}</p>
             {[copy.phone2, copy.phone3, copy.email, copy.addressLine1, copy.addressLine2, copy.country].map(item => (
-              <a key={item} href="#" style={{ display: 'block', fontSize: 12, color: 'var(--c-sand)', textDecoration: 'none', marginBottom: 9, opacity: 0.6 }}>{item}</a>
+              <a
+                key={item}
+                href={item.includes('@') ? `mailto:${item}` : '#'}
+                style={{
+                  display: 'block',
+                  fontFamily: item.includes('@') ? 'Georgia, serif' : undefined,
+                  fontSize: 12,
+                  color: 'var(--c-sand)',
+                  textDecoration: 'none',
+                  marginBottom: 9,
+                  opacity: 0.6,
+                }}
+              >
+                {item}
+              </a>
             ))}
           </div>
         </div>
