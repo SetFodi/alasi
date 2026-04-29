@@ -21,7 +21,7 @@ const FABRICS = [
   { id: 'sand',   name: 'Sand Beige',            c1: '#C9A97A', c2: '#E8D8BC', label: 'SB-02' },
   { id: 'gray',   name: 'Coastal Gray',          c1: '#7A9AA8', c2: '#D0DFE3', label: 'CG-03' },
   { id: 'forest', name: 'Deep Forest',           c1: '#1A3A28', c2: '#2F5D3A', label: 'DF-04' },
-  { id: 'burg',   name: 'CAFÉ Burgundy',         c1: '#4A2724', c2: '#8A4A44', label: 'CB-05' },
+  { id: 'burg',   name: 'CAFE Burgundy',         c1: '#4A2724', c2: '#8A4A44', label: 'CB-05' },
   { id: 'navy',   name: 'Atlantic Navy',         c1: '#1E3A5F', c2: '#AEBFC3', label: 'AN-06' },
 ];
 

@@ -49,7 +49,7 @@ function Track() {
       <Diamond />
       <SwatchRow />
       <Diamond />
-      <TextLabel text="CAFÉ Terraces" />
+      <TextLabel text="CAFE Terraces" />
       <Diamond />
       <TextLabel text="Pergola Shading" />
       <Diamond />

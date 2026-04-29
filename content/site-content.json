@@ -12,7 +12,7 @@
       "titleLine1": "Shade Made",
       "titleLine2": "for the",
       "titleAccent": "Georgian Sun",
-      "body": "Premium retractable awnings for balconies, CAFÉS, terraces, and homes — engineered for Georgia's climate, crafted for its character.",
+      "body": "Premium retractable awnings for balconies, CAFES, terraces, and homes — engineered for Georgia's climate, crafted for its character.",
       "primaryCta": "Explore Products",
       "secondaryCta": "Request Consultation",
       "visualizerTitle": "Awning Visualizer",
@@ -45,7 +45,7 @@
       "eyebrow": "Our Story",
       "title": "Built for Georgia's",
       "titleAccent": "light and life",
-      "body1": "Alasi creates custom awning solutions for Georgian homes, CAFÉS, and outdoor spaces — combining durable European-inspired shading systems with refined local installation.",
+      "body1": "Alasi creates custom awning solutions for Georgian homes, CAFES, and outdoor spaces — combining durable European-inspired shading systems with refined local installation.",
       "body2": "Born in Batumi, shaped by the Black Sea's generous sun and unpredictable winds, we understand that shade is architecture. Our systems are chosen for Georgia's climate: Tbilisi summer heat, Adjara coastal humidity, and the long terrace evenings that make Georgian life what it is.",
       "stat1Value": "8+",
       "stat1Label": "Years",
@@ -62,7 +62,12 @@
       "emailCta": "Get a Free Quote",
       "whatsappCta": "WhatsApp",
       "email": "info@alasi.ge",
-      "whatsappUrl": "https://wa.me/995591000000"
+      "whatsappUrl": "https://wa.me/995595644788",
+      "messengerLabel": "Telegram / WhatsApp",
+      "messengerPhone": "+995 595 644 788",
+      "phoneLabel": "Contact numbers",
+      "phone1": "+995 591 060 426",
+      "phone2": "+995 591 449 093"
     }
   },
   "fabrics": {
@@ -91,14 +96,16 @@
   },
   "footer": {
     "brand": "Alasi",
-    "description": "Premium retractable awning systems for Georgian homes, CAFÉS, and outdoor spaces.",
+    "description": "Premium retractable awning systems for Georgian homes, CAFES, and outdoor spaces.",
     "location": "ბათუმი, აჭარა, საქართველო",
     "productsTitle": "Products",
     "companyTitle": "Company",
     "contactTitle": "Contact",
     "copyright": "© 2026 Alasi. All rights reserved.",
     "tagline": "Premium Awning Systems · Georgia",
-    "phone": "+995 591 00 00 00",
+    "phone": "+995 595 644 788",
+    "phone2": "+995 591 060 426",
+    "phone3": "+995 591 449 093",
     "email": "info@alasi.ge",
     "addressLine1": "21 Rustaveli Ave",
     "addressLine2": "Batumi 6000",
@@ -107,7 +114,7 @@
   },
   "seo": {
     "homeTitle": "Alasi — Premium Awnings Georgia",
-    "homeDescription": "Premium retractable awnings for balconies, CAFÉS, terraces, and homes — engineered for Georgia's climate.",
+    "homeDescription": "Premium retractable awnings for balconies, CAFES, terraces, and homes — engineered for Georgia's climate.",
     "fabricsTitle": "Alasi — Fabric Library",
     "fabricsDescription": "89 outdoor colours from the Advance collection — preview every one live on a 3D awning model."
   }

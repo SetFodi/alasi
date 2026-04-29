@@ -31,11 +31,11 @@ export default function Gallery({ content = defaultContent }: { content?: SiteCo
             </div>
           </div>
           <div className="photo-card gallery-card" style={{ position: 'relative', overflow: 'hidden', cursor: 'pointer', background: 'var(--c-very-dark)', borderRadius: 3 }}>
-            <img src="/uploads/Capture_an_architectural_shot__Nano_Banana_Pro_18949.jpg" alt="Seaside CAFÉ · Batumi Seafront" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src="/uploads/Capture_an_architectural_shot__Nano_Banana_Pro_18949.jpg" alt="Seaside CAFE · Batumi Seafront" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             <div className="card-overlay" style={{ position: 'absolute', inset: 0, background: 'rgba(26,14,13,0.12)', transition: 'background 0.45s ease' }} />
             <div className="gallery-label" style={{ position: 'absolute', bottom: 20, left: 20 }}>
               <p style={{ fontSize: 9, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--tweak-accent)', marginBottom: 5 }}>Commercial</p>
-              <p style={{ fontFamily: 'var(--tweak-font-heading)', fontSize: 15, color: 'var(--c-cream)', fontWeight: 400 }}>Seaside CAFÉ · Batumi Seafront</p>
+              <p style={{ fontFamily: 'var(--tweak-font-heading)', fontSize: 15, color: 'var(--c-cream)', fontWeight: 400 }}>Seaside CAFE · Batumi Seafront</p>
             </div>
           </div>
         </div>
