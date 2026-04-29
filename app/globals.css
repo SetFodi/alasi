@@ -1,3 +1,11 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Dachi The Lynx';
+  font-style: normal;
+  font-weight: 300 700;
+  src: url('/dachithelynx.otf') format('opentype');
+}
+
 :root {
   --c-brown: #4A2724;
   --c-dark-brown: #2C1614;
@@ -9,8 +17,9 @@
   --c-light-sand: #EDE4D4;
 
   --tweak-accent: var(--c-olive);
-  --tweak-font-heading: 'Georgia', serif;
-  --tweak-hero-size: 88px;
+  --font-site: 'Dachi The Lynx', Georgia, serif;
+  --tweak-font-heading: var(--font-site);
+  --tweak-hero-size: 76px;
 
   --awning-c1: #2F5D3A;
   --awning-c2: #F7EFE5;
@@ -27,7 +36,7 @@ html.fabric-page {
 body {
   background: var(--c-dark-brown);
   color: var(--c-cream);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-site);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -79,7 +88,7 @@ body {
 .preloader-video { width: 100%; height: auto; display: block; }
 
 .preloader-text {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-site);
   font-size: 56px;
   color: var(--c-cream);
   font-weight: 300;
@@ -221,7 +230,7 @@ body {
 .fabric-eyebrow { color: var(--c-sea); font-size: 10px; letter-spacing: 0.22em; margin-bottom: 24px; text-transform: uppercase; }
 .fabric-hero h1 {
   color: var(--c-cream);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-site);
   font-size: clamp(58px,5.5vw,92px);
   font-weight: 300; line-height: 0.94; max-width: 720px;
   letter-spacing: 0;
@@ -271,7 +280,7 @@ body {
 .fabric-hero-meta span:last-child { border-right: 0; }
 .fabric-hero-meta strong {
   color: var(--c-cream);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-site);
   font-size: 34px;
   font-weight: 300;
   letter-spacing: 0;
@@ -414,7 +423,7 @@ body {
   display: flex; justify-content: space-between; gap: 28px; padding-bottom: 26px;
 }
 .advance-kicker { color: var(--c-sea); font-size: 10px; letter-spacing: 0.18em; margin-bottom: 12px; text-transform: uppercase; }
-.advance-heading h2 { color: var(--c-cream); font-family: 'Cormorant Garamond', serif; font-size: clamp(42px,5.2vw,82px); font-weight: 300; line-height: 0.98; }
+.advance-heading h2 { color: var(--c-cream); font-family: var(--font-site); font-size: clamp(42px,5.2vw,82px); font-weight: 300; line-height: 0.98; }
 .advance-back { border-bottom: 1px solid rgba(216,196,168,0.58); color: var(--c-sand); flex: 0 0 auto; font-size: 10px; letter-spacing: 0.16em; padding-bottom: 7px; text-decoration: none; text-transform: uppercase; }
 .advance-tabs, .advance-finish { display: flex; flex-wrap: wrap; }
 .advance-tabs { gap: 10px; padding: 28px 0 14px; }

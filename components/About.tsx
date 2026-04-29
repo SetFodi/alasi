@@ -8,7 +8,7 @@ export default function About() {
             Built for Georgia&apos;s<br /><em style={{ fontStyle: 'italic' }}>light and life</em>
           </h2>
           <p style={{ fontSize: 15, color: 'var(--c-sand)', lineHeight: 1.85, marginBottom: 20, opacity: 0.88 }}>
-            Alasi creates custom awning solutions for Georgian homes, cafés, and outdoor spaces — combining durable European-inspired shading systems with refined local installation.
+            Alasi creates custom awning solutions for Georgian homes, CAFÉS, and outdoor spaces — combining durable European-inspired shading systems with refined local installation.
           </p>
           <p style={{ fontSize: 15, color: 'var(--c-sand)', lineHeight: 1.85, opacity: 0.88 }}>
             Born in Batumi, shaped by the Black Sea&apos;s generous sun and unpredictable winds, we understand that shade is architecture. Our systems are chosen for Georgia&apos;s climate: Tbilisi summer heat, Adjara coastal humidity, and the long terrace evenings that make Georgian life what it is.

@@ -20,7 +20,7 @@ const FABRICS = [
   { id: 'sand',   name: 'Sand Beige',            c1: '#C9A97A', c2: '#E8D8BC', label: 'SB-02' },
   { id: 'gray',   name: 'Coastal Gray',          c1: '#7A9AA8', c2: '#D0DFE3', label: 'CG-03' },
   { id: 'forest', name: 'Deep Forest',           c1: '#1A3A28', c2: '#2F5D3A', label: 'DF-04' },
-  { id: 'burg',   name: 'Café Burgundy',         c1: '#4A2724', c2: '#8A4A44', label: 'CB-05' },
+  { id: 'burg',   name: 'CAFÉ Burgundy',         c1: '#4A2724', c2: '#8A4A44', label: 'CB-05' },
   { id: 'navy',   name: 'Atlantic Navy',         c1: '#1E3A5F', c2: '#AEBFC3', label: 'AN-06' },
 ];
 
@@ -92,12 +92,12 @@ export default function Hero() {
           <p style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--c-sand)', marginBottom: 32, opacity: 0.85 }}>
             ბათუმი &nbsp;·&nbsp; Batumi &nbsp;·&nbsp; Black Sea
           </p>
-          <h1 style={{ fontFamily: 'var(--tweak-font-heading)', fontSize: 'clamp(52px, 5.5vw, var(--tweak-hero-size))', fontWeight: 300, lineHeight: 1.07, color: 'var(--c-cream)', marginBottom: 28, letterSpacing: '-0.015em' }}>
+          <h1 style={{ fontFamily: 'var(--tweak-font-heading)', fontSize: 'clamp(46px, 4.8vw, var(--tweak-hero-size))', fontWeight: 300, lineHeight: 1.04, color: 'var(--c-cream)', marginBottom: 28, letterSpacing: '0' }}>
             Shade Made<br />for the<br />
             <em style={{ fontStyle: 'italic', color: 'var(--c-sand)' }}>Georgian Sun</em>
           </h1>
-          <p style={{ fontSize: 16, color: 'var(--c-light-sand)', maxWidth: 420, marginBottom: 48, fontWeight: 300, lineHeight: 1.75, opacity: 0.88 }}>
-            Premium retractable awnings for balconies, cafés, terraces, and homes — engineered for Georgia&apos;s climate, crafted for its character.
+          <p style={{ fontSize: 14, color: 'var(--c-light-sand)', maxWidth: 520, marginBottom: 44, fontWeight: 300, lineHeight: 1.72, opacity: 0.88 }}>
+            Premium retractable awnings for balconies, CAFÉS, terraces, and homes — engineered for Georgia&apos;s climate, crafted for its character.
           </p>
           <div className="hero-actions" style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
             <Link href="#products" style={{ padding: '16px 42px', background: 'var(--tweak-accent)', color: 'var(--c-cream)', textDecoration: 'none', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 500, borderRadius: 1, transition: 'opacity 0.3s' }}>Explore Products</Link>

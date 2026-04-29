@@ -4,9 +4,9 @@ export default function Footer() {
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <div className="footer-layout" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 60, marginBottom: 56 }}>
           <div>
-            <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 30, fontWeight: 400, fontStyle: 'italic', color: 'var(--c-cream)', letterSpacing: '0.03em' }}>Alasi</span>
+            <span style={{ fontFamily: 'var(--font-site)', fontSize: 30, fontWeight: 400, fontStyle: 'italic', color: 'var(--c-cream)', letterSpacing: '0.03em' }}>Alasi</span>
             <p style={{ fontSize: 12, color: 'var(--c-sand)', marginTop: 16, lineHeight: 1.75, opacity: 0.6, maxWidth: 260 }}>
-              Premium retractable awning systems for Georgian homes, cafés, and outdoor spaces.
+              Premium retractable awning systems for Georgian homes, CAFÉS, and outdoor spaces.
             </p>
             <p style={{ fontSize: 11, color: 'var(--c-sand)', marginTop: 14, opacity: 0.4, letterSpacing: '0.06em' }}>ბათუმი, აჭარა, საქართველო</p>
             <div style={{ marginTop: 22, display: 'flex', gap: 12 }}>
@@ -17,7 +17,7 @@ export default function Footer() {
           </div>
           <div>
             <p style={{ fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--c-sand)', marginBottom: 18, opacity: 0.5 }}>Products</p>
-            {['Retractable Awnings','Balcony Systems','Café Terraces','Pergola Shading','Fabrics'].map(item => (
+            {['Retractable Awnings','Balcony Systems','CAFÉ Terraces','Pergola Shading','Fabrics'].map(item => (
               <a key={item} href="#" style={{ display: 'block', fontSize: 12, color: 'var(--c-sand)', textDecoration: 'none', marginBottom: 9, opacity: 0.6 }}>{item}</a>
             ))}
           </div>
