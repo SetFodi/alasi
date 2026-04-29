@@ -25,6 +25,26 @@ function deepMerge<T>(base: T, override: unknown): T {
   return merged as T;
 }
 
+function normalizeText(value: unknown): unknown {
+  if (typeof value === 'string') {
+    return value
+      .replaceAll('CAFÉS', 'CAFES')
+      .replaceAll('CAFÉ', 'CAFE')
+      .replaceAll('Cafés', 'Cafes')
+      .replaceAll('Café', 'Cafe')
+      .replaceAll('cafés', 'cafes')
+      .replaceAll('café', 'cafe');
+  }
+
+  if (Array.isArray(value)) return value.map(normalizeText);
+
+  if (isRecord(value)) {
+    return Object.fromEntries(Object.entries(value).map(([key, child]) => [key, normalizeText(child)]));
+  }
+
+  return value;
+}
+
 async function redisCommand<T>(command: unknown[]): Promise<T | null> {
   const config = getRedisConfig();
   if (!config.url || !config.token) return null;
@@ -53,7 +73,7 @@ export async function getSiteContent(): Promise<SiteContent> {
   try {
     const stored = await redisCommand<string>(['GET', CONTENT_KEY]);
     if (!stored) return defaultContent;
-    return deepMerge(defaultContent, JSON.parse(stored));
+    return normalizeText(deepMerge(defaultContent, JSON.parse(stored))) as SiteContent;
   } catch {
     return defaultContent;
   }

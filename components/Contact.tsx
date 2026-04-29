@@ -22,7 +22,6 @@ export default function Contact({ content = defaultContent }: { content?: SiteCo
         </div>
         <div style={{ display: 'grid', gap: 10, marginTop: 34, color: 'var(--c-sand)', opacity: 0.76 }}>
           <p style={{ fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase' }}>{copy.messengerLabel}: {copy.messengerPhone}</p>
-          <p style={{ fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase' }}>{copy.phoneLabel}: {copy.phone1} · {copy.phone2}</p>
         </div>
       </div>
     </section>
