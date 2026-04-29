@@ -1,0 +1,546 @@
+[
+  {
+    "name": "white",
+    "code": "80180412",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180412-White.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180412-White.jpg.webp"
+  },
+  {
+    "name": "magnolia",
+    "code": "80180413",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180413-Magnolia.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180413-Magnolia.jpg.webp"
+  },
+  {
+    "name": "camel",
+    "code": "80180414",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180414-Camel.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180414-Camel.jpg.webp"
+  },
+  {
+    "name": "champagne",
+    "code": "80180415",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180415-Champagne.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180415-Champagne.jpg.webp"
+  },
+  {
+    "name": "sweet yellow",
+    "code": "80180417",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180417-Sweet-Yeloow.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180417-Sweet-Yeloow.jpg.webp"
+  },
+  {
+    "name": "amarillo",
+    "code": "80180418",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180418-Amarillo.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180418-Amarillo.jpg.webp"
+  },
+  {
+    "name": "naranja",
+    "code": "80180419",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180419-Naranja.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180419-Naranja.jpg.webp"
+  },
+  {
+    "name": "red",
+    "code": "80180420",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180420-Red.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180420-Red.jpg.webp"
+  },
+  {
+    "name": "burdeos",
+    "code": "80180421",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180421-Burdeos.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180421-Burdeos.jpg.webp"
+  },
+  {
+    "name": "niza",
+    "code": "80180422",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180422-Niza.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180422-Niza.jpg.webp"
+  },
+  {
+    "name": "marina",
+    "code": "80180423",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180423-Marina.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180423-Marina.jpg.webp"
+  },
+  {
+    "name": "fresh",
+    "code": "80180424",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180424-Fresh.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180424-Fresh.jpg.webp"
+  },
+  {
+    "name": "hierba",
+    "code": "80180425",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180425-Hierba.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180425-Hierba.jpg.webp"
+  },
+  {
+    "name": "abeto",
+    "code": "80180426",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180426-Abeto.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180426-Abeto.jpg.webp"
+  },
+  {
+    "name": "olive",
+    "code": "80180427",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180427-Olive.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180427-Olive.jpg.webp"
+  },
+  {
+    "name": "silver",
+    "code": "80180428",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180428-Silver.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180428-Silver.jpg.webp"
+  },
+  {
+    "name": "steel",
+    "code": "80180429",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180429-Steel.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180429-Steel.jpg.webp"
+  },
+  {
+    "name": "brown",
+    "code": "80180430",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180430-Brown.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180430-Brown.jpg.webp"
+  },
+  {
+    "name": "black",
+    "code": "80180431",
+    "group": "technical-pvc",
+    "finish": "lacquered-1-face",
+    "src": "/uploads/copentek/tech/textures/80180431-Black.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180431-Black.jpg.webp"
+  },
+  {
+    "name": "blanco",
+    "code": "80180454",
+    "group": "blackout",
+    "finish": "lacquered-on-2-faces",
+    "src": "/uploads/copentek/tech/textures/80180454-Blanco-L.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180454-Blanco-L.jpg.webp"
+  },
+  {
+    "name": "vainilla",
+    "code": "80180455",
+    "group": "blackout",
+    "finish": "lacquered-on-2-faces",
+    "src": "/uploads/copentek/tech/textures/80180455-Vainilla-L.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180455-Vainilla-L.jpg.webp"
+  },
+  {
+    "name": "beig dec",
+    "code": "80180618",
+    "group": "blackout",
+    "finish": "lacquered-on-2-faces",
+    "src": "/uploads/copentek/tech/textures/80180618-Beig-Dec.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180618-Beig-Dec.jpg.webp"
+  },
+  {
+    "name": "optic",
+    "code": "80180598",
+    "group": "screen",
+    "finish": "screen-in",
+    "src": "/uploads/copentek/tech/textures/80180598-Optic-Screen-40.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180598-Optic-Screen-40.jpg.webp"
+  },
+  {
+    "name": "white",
+    "code": "80180599",
+    "group": "screen",
+    "finish": "screen-in",
+    "src": "/uploads/copentek/tech/textures/80180599-White-Screen-40.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180599-White-Screen-40.jpg.webp"
+  },
+  {
+    "name": "sand",
+    "code": "80180600",
+    "group": "screen",
+    "finish": "screen-in",
+    "src": "/uploads/copentek/tech/textures/80180600-Sand-Screen-40.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180600-Sand-Screen-40.jpg.webp"
+  },
+  {
+    "name": "beige",
+    "code": "80180601",
+    "group": "screen",
+    "finish": "screen-in",
+    "src": "/uploads/copentek/tech/textures/80180601-Beige-Screen-40.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180601-Beige-Screen-40.jpg.webp"
+  },
+  {
+    "name": "alu",
+    "code": "80180602",
+    "group": "screen",
+    "finish": "screen-in",
+    "src": "/uploads/copentek/tech/textures/Alu-Screen-40.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/Alu-Screen-40.jpg.webp"
+  },
+  {
+    "name": "pearl",
+    "code": "80180603",
+    "group": "screen",
+    "finish": "screen-in",
+    "src": "/uploads/copentek/tech/textures/80180603-Pearl-Screen-40.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180603-Pearl-Screen-40.jpg.webp"
+  },
+  {
+    "name": "iron",
+    "code": "80180604",
+    "group": "screen",
+    "finish": "screen-in",
+    "src": "/uploads/copentek/tech/textures/80180604-Iron-Screen-40.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180604-Iron-Screen-40.jpg.webp"
+  },
+  {
+    "name": "metal",
+    "code": "80180605",
+    "group": "screen",
+    "finish": "screen-in",
+    "src": "/uploads/copentek/tech/textures/80180605-Metal-Screen-40.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180605-Metal-Screen-40.jpg.webp"
+  },
+  {
+    "name": "bronze",
+    "code": "80180606",
+    "group": "screen",
+    "finish": "screen-in",
+    "src": "/uploads/copentek/tech/textures/80180606-Bronze-Screen-40.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180606-Bronze-Screen-40.jpg.webp"
+  },
+  {
+    "name": "black",
+    "code": "80180607",
+    "group": "screen",
+    "finish": "screen-in",
+    "src": "/uploads/copentek/tech/textures/8018067-Black-Screen-40.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/8018067-Black-Screen-40.jpg.webp"
+  },
+  {
+    "name": "optik",
+    "code": "80180608",
+    "group": "screen",
+    "finish": "screen-out",
+    "src": "/uploads/copentek/tech/textures/80180598-Optic-Screen-40.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180598-Optic-Screen-40.jpg.webp"
+  },
+  {
+    "name": "white",
+    "code": "80180609",
+    "group": "screen",
+    "finish": "screen-out",
+    "src": "/uploads/copentek/tech/textures/80180609-White-Screen-60.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180609-White-Screen-60.jpg.webp"
+  },
+  {
+    "name": "marfil",
+    "code": "80180610",
+    "group": "screen",
+    "finish": "screen-out",
+    "src": "/uploads/copentek/tech/textures/80180610-Marfil-Screen-60.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180610-Marfil-Screen-60.jpg.webp"
+  },
+  {
+    "name": "stone",
+    "code": "80180611",
+    "group": "screen",
+    "finish": "screen-out",
+    "src": "/uploads/copentek/tech/textures/80180611-Stone-Screen-60.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180611-Stone-Screen-60.jpg.webp"
+  },
+  {
+    "name": "grey",
+    "code": "80180612",
+    "group": "screen",
+    "finish": "screen-out",
+    "src": "/uploads/copentek/tech/textures/80180612-Grey-Screen-60.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180612-Grey-Screen-60.jpg.webp"
+  },
+  {
+    "name": "sand",
+    "code": "80180613",
+    "group": "screen",
+    "finish": "screen-out",
+    "src": "/uploads/copentek/tech/textures/80180613-Sand-Screen-60.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180613-Sand-Screen-60.jpg.webp"
+  },
+  {
+    "name": "mineral",
+    "code": "80180614",
+    "group": "screen",
+    "finish": "screen-out",
+    "src": "/uploads/copentek/tech/textures/80180614-Mineral-Screen-60.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180614-Mineral-Screen-60.jpg.webp"
+  },
+  {
+    "name": "iron",
+    "code": "80180615",
+    "group": "screen",
+    "finish": "screen-out",
+    "src": "/uploads/copentek/tech/textures/80180615-Iron-Screen-60.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180615-Iron-Screen-60.jpg.webp"
+  },
+  {
+    "name": "grafito",
+    "code": "80180616",
+    "group": "screen",
+    "finish": "screen-out",
+    "src": "/uploads/copentek/tech/textures/80180616-Grafito-Screen-60.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180616-Grafito-Screen-60.jpg.webp"
+  },
+  {
+    "name": "black",
+    "code": "80180617",
+    "group": "screen",
+    "finish": "screen-out",
+    "src": "/uploads/copentek/tech/textures/80180617-Black-Screen-60.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180617-Black-Screen-60.jpg.webp"
+  },
+  {
+    "name": "white",
+    "code": "80180432",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180432-White-96-8102.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180432-White-96-8102.jpg.webp"
+  },
+  {
+    "name": "shea",
+    "code": "80180433",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180433-New-Shea-96-2001.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180433-New-Shea-96-2001.jpg.webp"
+  },
+  {
+    "name": "off white",
+    "code": "80180435",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180435-Off-white-96-1103.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180435-Off-white-96-1103.jpg.webp"
+  },
+  {
+    "name": "sand",
+    "code": "80180436",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180436-Sand-Soltis-96.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180436-Sand-Soltis-96.jpg.webp"
+  },
+  {
+    "name": "sandy beige",
+    "code": "80180437",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180437-Sandy-Beige-96-2135.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180437-Sandy-Beige-96-2135.jpg.webp"
+  },
+  {
+    "name": "taupe",
+    "code": "80180619",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180619-Taupe-96-50850.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180619-Taupe-96-50850.jpg.webp"
+  },
+  {
+    "name": "boulder",
+    "code": "80180443",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180443-Boulder-Soltis-96.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180443-Boulder-Soltis-96.jpg.webp"
+  },
+  {
+    "name": "cloud",
+    "code": "80180620",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180620-Cloud-96-50272.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180620-Cloud-96-50272.jpg.webp"
+  },
+  {
+    "name": "platinum",
+    "code": "80180621",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180621-Platinum-96-50844.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180621-Platinum-96-50844.jpg.webp"
+  },
+  {
+    "name": "aureolin",
+    "code": "80180622",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180622-Aureolin-96-50845.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180622-Aureolin-96-50845.jpg.webp"
+  },
+  {
+    "name": "caramel",
+    "code": "80180623",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180623-Caramel-96-50261.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180623-Caramel-96-50261.jpg.webp"
+  },
+  {
+    "name": "red",
+    "code": "80180441",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180441-Red-96-8255.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180441-Red-96-8255.jpg.webp"
+  },
+  {
+    "name": "cytrus",
+    "code": "80180624",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180624-Cytrus-96-50846.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180624-Cytrus-96-50846.jpg.webp"
+  },
+  {
+    "name": "lime",
+    "code": "80180625",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180625-Lime-96-50848.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180625-Lime-96-50848.jpg.webp"
+  },
+  {
+    "name": "jungle",
+    "code": "80180447",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180447-Jungle-96-8056.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180447-Jungle-96-8056.jpg.webp"
+  },
+  {
+    "name": "acapulco",
+    "code": "80180626",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180626-Acapulco-96-50847.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180626-Acapulco-96-50847.jpg.webp"
+  },
+  {
+    "name": "atlantis",
+    "code": "80180627",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180627-Atlantis-Soltis-96.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180627-Atlantis-Soltis-96.jpg.webp"
+  },
+  {
+    "name": "midnight blue",
+    "code": "80180446",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180446-Midnight-Blue-96-2161.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180446-Midnight-Blue-96-2161.jpg.webp"
+  },
+  {
+    "name": "bronze",
+    "code": "80180628",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180628-Bronze-96-2043.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180628-Bronze-96-2043.jpg.webp"
+  },
+  {
+    "name": "anthracite",
+    "code": "80180444",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180444-Anthracite-96-2047.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180444-Anthracite-96-2047.jpg.webp"
+  },
+  {
+    "name": "black",
+    "code": "80180448",
+    "group": "soltis",
+    "finish": "soltis-96",
+    "src": "/uploads/copentek/tech/textures/80180448-Black-96-8450.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180448-Black-96-8450.jpg.webp"
+  },
+  {
+    "name": "white",
+    "code": "80180449",
+    "group": "soltis",
+    "finish": "soltis-w96",
+    "src": "/uploads/copentek/tech/textures/80180449-White-W96-8102-1.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180449-White-W96-8102-1.jpg.webp"
+  },
+  {
+    "name": "off white",
+    "code": "80180450",
+    "group": "soltis",
+    "finish": "soltis-w96",
+    "src": "/uploads/copentek/tech/textures/80180450-Off-White-W96-1103-1.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180450-Off-White-W96-1103-1.jpg.webp"
+  },
+  {
+    "name": "vanilla",
+    "code": "80180451",
+    "group": "soltis",
+    "finish": "soltis-w96",
+    "src": "/uploads/copentek/tech/textures/80180451-Vanilla-W96-8861-1.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180451-Vanilla-W96-8861-1.jpg.webp"
+  },
+  {
+    "name": "pebble",
+    "code": "80180452",
+    "group": "soltis",
+    "finish": "soltis-w96",
+    "src": "/uploads/copentek/tech/textures/80180452-Pebble-W96-2171-1.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180452-Pebble-W96-2171-1.jpg.webp"
+  },
+  {
+    "name": "anthracite",
+    "code": "80180453",
+    "group": "soltis",
+    "finish": "soltis-w96",
+    "src": "/uploads/copentek/tech/textures/80180453-Anthracite-W96-2047-1.jpg.webp",
+    "texture": "/uploads/copentek/tech/textures/80180453-Anthracite-W96-2047-1.jpg.webp"
+  }
+]

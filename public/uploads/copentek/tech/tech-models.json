@@ -1,0 +1,23 @@
+[
+  {
+    "id": "clima-rain",
+    "label": "Clima Rain",
+    "src": "/uploads/copentek/tech/models/clima-rain-materials.glb",
+    "thumb": "/uploads/copentek/tech/thumbs/clima-rain.webp",
+    "thumbOn": "/uploads/copentek/tech/thumbs/clima-rain-on.webp"
+  },
+  {
+    "id": "nexus-cable",
+    "label": "Nexus Cable",
+    "src": "/uploads/copentek/tech/models/nexus-cable-materials.glb",
+    "thumb": "/uploads/copentek/tech/thumbs/nexus-cable.webp",
+    "thumbOn": "/uploads/copentek/tech/thumbs/nexus-cable-on.webp"
+  },
+  {
+    "id": "sc-curve",
+    "label": "Sc Curve",
+    "src": "/uploads/copentek/tech/models/sc-curve-materials.glb",
+    "thumb": "/uploads/copentek/tech/thumbs/sc-curve.webp",
+    "thumbOn": "/uploads/copentek/tech/thumbs/sc-curve.webp"
+  }
+]

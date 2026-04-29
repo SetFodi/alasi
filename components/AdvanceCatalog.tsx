@@ -93,7 +93,6 @@ export default function AdvanceCatalog({ content = defaultContent }: { content?:
             <div className="advance-preview-top">
               <div className="advance-preview-title">
                 <span>{copy.livePreview}</span>
-                <strong>{displaySelected?.code ?? '—'}</strong>
               </div>
               <div className="advance-model-switcher" aria-label="Awning model">
                 {MODELS.map(m => (
@@ -174,7 +173,7 @@ export default function AdvanceCatalog({ content = defaultContent }: { content?:
 
             <div className="advance-status">
               <span>{visible.length} colours</span>
-              <span>{displaySelected ? `${displaySelected.name} / ${displaySelected.code}` : copy.selectFallback}</span>
+              <span>{displaySelected ? displaySelected.name : copy.selectFallback}</span>
             </div>
 
             <div className="advance-grid" aria-live="polite">

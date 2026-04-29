@@ -53,7 +53,7 @@ export default function Preloader() {
             <source src="/uploads/Premium_Awning_Animation_Generation_alpha.webm" type="video/webm" />
           </video>
         </div>
-        <span className="preloader-text">Alasi</span>
+        <img className="preloader-logo" src="/uploads/alasi-logo-transparent.png" alt="Alasi" />
         <div className="preloader-bar-track">
           <div className="preloader-bar-fill" />
         </div>

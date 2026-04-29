@@ -3,6 +3,7 @@
     "products": "Products",
     "projects": "Projects",
     "fabrics": "Fabrics",
+    "tech": "Tech",
     "about": "About",
     "quote": "Get a Quote"
   },
@@ -94,6 +95,30 @@
       "selectFallback": "Select a fabric"
     }
   },
+  "tech": {
+    "hero": {
+      "eyebrow": "Alasi Technical Library",
+      "title": "Technical shade for demanding outdoor spaces.",
+      "body": "Explore PVC, blackout, screen, and Soltis textiles for pergolas, facade screens, and exposed outdoor systems. Preview every colour live on Clima Rain, Nexus Cable, or SC Curve.",
+      "cta": "Browse tech fabrics",
+      "secondaryCta": "Advance fabrics",
+      "colours": "Colours",
+      "categories": "Categories",
+      "systems": "Systems",
+      "boardTitle": "Architectural technical systems",
+      "boardMeta": "PVC · Blackout · Screen · Soltis"
+    },
+    "catalog": {
+      "kicker": "Technical fabrics for outdoor systems",
+      "title": "Tech Collection",
+      "backFabrics": "Back to fabrics",
+      "description": "Built for stronger solar control, privacy, weather exposure, and clean architectural installations.",
+      "technicalButton": "Technical characteristics",
+      "livePreview": "Live preview",
+      "rotateHint": "Drag to rotate",
+      "selectFallback": "Select a technical fabric"
+    }
+  },
   "footer": {
     "brand": "Alasi",
     "description": "Premium retractable awning systems for Georgian homes, CAFES, and outdoor spaces.",
@@ -117,6 +142,8 @@
     "homeTitle": "Alasi — Premium Awnings Georgia",
     "homeDescription": "Premium retractable awnings for balconies, CAFES, terraces, and homes — engineered for Georgia's climate.",
     "fabricsTitle": "Alasi — Fabric Library",
-    "fabricsDescription": "89 outdoor colours from the Advance collection — preview every one live on a 3D awning model."
+    "fabricsDescription": "89 outdoor colours from the Advance collection — preview every one live on a 3D awning model.",
+    "techTitle": "Alasi — Technical Fabric Systems",
+    "techDescription": "Technical PVC, blackout, screen, and Soltis fabrics with live 3D previews on Clima Rain, Nexus Cable, and SC Curve systems."
   }
 }

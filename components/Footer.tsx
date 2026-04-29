@@ -51,8 +51,15 @@ export default function Footer({ content = defaultContent }: { content?: SiteCon
           </div>
           <div>
             <p style={{ fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--c-sand)', marginBottom: 18, opacity: 0.5 }}>{copy.productsTitle}</p>
-            {['Retractable Awnings','Balcony Systems','CAFE Terraces','Pergola Shading','Fabrics'].map(item => (
-              <a key={item} href="#" style={{ display: 'block', fontSize: 12, color: 'var(--c-sand)', textDecoration: 'none', marginBottom: 9, opacity: 0.6 }}>{item}</a>
+            {[
+              ['Retractable Awnings', '/#products'],
+              ['Balcony Systems', '/#products'],
+              ['CAFE Terraces', '/#products'],
+              ['Pergola Shading', '/#products'],
+              ['Advance Fabrics', '/fabrics'],
+              ['Technical Fabrics', '/tech'],
+            ].map(([item, href]) => (
+              <a key={item} href={href} style={{ display: 'block', fontSize: 12, color: 'var(--c-sand)', textDecoration: 'none', marginBottom: 9, opacity: 0.6 }}>{item}</a>
             ))}
           </div>
           <div>

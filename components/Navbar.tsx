@@ -29,6 +29,7 @@ export default function Navbar({ fabricPage = false, content = defaultContent }:
         <Link href="/#products">{content.nav.products}</Link>
         <Link href="/#projects">{content.nav.projects}</Link>
         <Link href="/fabrics">{content.nav.fabrics}</Link>
+        <Link href="/tech">{content.nav.tech}</Link>
         <Link href="/#about">{content.nav.about}</Link>
         <Link href="/#contact" className="btn-outline" style={{ marginRight: 0 }}>{content.nav.quote}</Link>
       </div>
