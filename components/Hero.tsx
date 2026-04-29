@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import defaultContent, { type SiteContent } from '@/lib/site-content';
 
 declare global {
   namespace JSX {
@@ -45,10 +46,11 @@ async function updateModelTexture(mv: HTMLElement & { createTexture?: (url: stri
   mat?.pbrMetallicRoughness?.baseColorTexture.setTexture(texture);
 }
 
-export default function Hero() {
+export default function Hero({ content = defaultContent }: { content?: SiteContent }) {
+  const hero = content.home.hero;
   const [activeIdx, setActiveIdx] = useState(0);
   const [label, setLabel] = useState(FABRICS[0].name);
-  const [code, setCode] = useState(`Collection ref: ${FABRICS[0].label} · alasi.ge/fabrics`);
+  const [code, setCode] = useState(`${hero.collectionPrefix}: ${FABRICS[0].label} · alasi.ge/fabrics`);
   const modelRef = useRef<HTMLElement>(null);
   const heroBgRef = useRef<HTMLDivElement>(null);
 
@@ -71,7 +73,7 @@ export default function Hero() {
   function pickFabric(f: typeof FABRICS[0], idx: number) {
     setActiveIdx(idx);
     setLabel(f.name);
-    setCode(`Collection ref: ${f.label} · alasi.ge/fabrics`);
+    setCode(`${hero.collectionPrefix}: ${f.label} · alasi.ge/fabrics`);
     document.documentElement.style.setProperty('--awning-c1', f.c1);
     document.documentElement.style.setProperty('--awning-c2', f.c2);
     const mv = modelRef.current as (HTMLElement & { createTexture?: (url: string) => Promise<unknown>; model?: { materials: Array<{ name: string; pbrMetallicRoughness?: { baseColorTexture: { setTexture: (t: unknown) => void } } }> } }) | null;
@@ -90,25 +92,25 @@ export default function Hero() {
       <div className="hero-layout" style={{ flex: 1, position: 'relative', zIndex: 2, display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'stretch', padding: '120px 64px 80px', gap: 40 }}>
         <div className="hero-copy" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <p style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--c-sand)', marginBottom: 32, opacity: 0.85 }}>
-            ბათუმი &nbsp;·&nbsp; Batumi &nbsp;·&nbsp; Black Sea
+            {hero.eyebrow}
           </p>
           <h1 style={{ fontFamily: 'var(--tweak-font-heading)', fontSize: 'clamp(46px, 4.8vw, var(--tweak-hero-size))', fontWeight: 300, lineHeight: 1.04, color: 'var(--c-cream)', marginBottom: 28, letterSpacing: '0' }}>
-            Shade Made<br />for the<br />
-            <em style={{ fontStyle: 'italic', color: 'var(--c-sand)' }}>Georgian Sun</em>
+            {hero.titleLine1}<br />{hero.titleLine2}<br />
+            <em style={{ fontStyle: 'italic', color: 'var(--c-sand)' }}>{hero.titleAccent}</em>
           </h1>
           <p style={{ fontSize: 14, color: 'var(--c-light-sand)', maxWidth: 520, marginBottom: 44, fontWeight: 300, lineHeight: 1.72, opacity: 0.88 }}>
-            Premium retractable awnings for balconies, CAFÉS, terraces, and homes — engineered for Georgia&apos;s climate, crafted for its character.
+            {hero.body}
           </p>
           <div className="hero-actions" style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <Link href="#products" style={{ padding: '16px 42px', background: 'var(--tweak-accent)', color: 'var(--c-cream)', textDecoration: 'none', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 500, borderRadius: 1, transition: 'opacity 0.3s' }}>Explore Products</Link>
-            <Link href="#contact" style={{ padding: '16px 42px', border: '1px solid rgba(216,196,168,0.5)', color: 'var(--c-cream)', textDecoration: 'none', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 400, borderRadius: 1, transition: 'all 0.3s', backdropFilter: 'blur(8px)', background: 'rgba(255,255,255,0.04)' }}>Request Consultation</Link>
+            <Link href="#products" style={{ padding: '16px 42px', background: 'var(--tweak-accent)', color: 'var(--c-cream)', textDecoration: 'none', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 500, borderRadius: 1, transition: 'opacity 0.3s' }}>{hero.primaryCta}</Link>
+            <Link href="#contact" style={{ padding: '16px 42px', border: '1px solid rgba(216,196,168,0.5)', color: 'var(--c-cream)', textDecoration: 'none', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 400, borderRadius: 1, transition: 'all 0.3s', backdropFilter: 'blur(8px)', background: 'rgba(255,255,255,0.04)' }}>{hero.secondaryCta}</Link>
           </div>
         </div>
 
         <div className="hero-visualizer" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 0 }}>
           <div className="hero-visualizer-card" style={{ background: 'rgba(26,14,13,0.55)', backdropFilter: 'blur(12px)', border: '1px solid rgba(216,196,168,0.12)', borderRadius: 2, overflow: 'hidden' }}>
             <div style={{ padding: '14px 24px', borderBottom: '1px solid rgba(216,196,168,0.1)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--c-sand)', opacity: 0.7 }}>Awning Visualizer</span>
+              <span style={{ fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--c-sand)', opacity: 0.7 }}>{hero.visualizerTitle}</span>
               <span style={{ fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--tweak-accent)', fontWeight: 500 }}>{label}</span>
             </div>
             <div style={{ position: 'relative' }}>
@@ -131,11 +133,11 @@ export default function Hero() {
               />
               <div style={{ position: 'absolute', bottom: 16, right: 20, display: 'flex', alignItems: 'center', gap: 6, opacity: 0.35, pointerEvents: 'none' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--c-sand)" strokeWidth="1.5"><path d="M5 9l-3 3 3 3M19 9l3 3-3 3M9 5l3-3 3 3M9 19l3 3 3-3"/><circle cx="12" cy="12" r="1"/></svg>
-                <span style={{ fontSize: 8, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--c-sand)' }}>3D View</span>
+                <span style={{ fontSize: 8, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--c-sand)' }}>{hero.modelHint}</span>
               </div>
             </div>
             <div style={{ padding: '20px 24px 22px', borderTop: '1px solid rgba(216,196,168,0.1)' }}>
-              <p style={{ fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--c-sand)', opacity: 0.55, marginBottom: 14 }}>Select Fabric</p>
+              <p style={{ fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--c-sand)', opacity: 0.55, marginBottom: 14 }}>{hero.fabricLabel}</p>
               <div id="fabric-chips" style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                 {FABRICS.map((f, idx) => (
                   <button

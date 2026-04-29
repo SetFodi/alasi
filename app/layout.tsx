@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Preloader from '@/components/Preloader';
+import content from '@/lib/site-content';
 
 export const metadata: Metadata = {
-  title: 'Alasi — Premium Awnings Georgia',
-  description: 'Premium retractable awnings for balconies, CAFÉS, terraces, and homes — engineered for Georgia\'s climate.',
+  title: content.seo.homeTitle,
+  description: content.seo.homeDescription,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

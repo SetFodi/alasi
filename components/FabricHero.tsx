@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import defaultContent, { type SiteContent } from '@/lib/site-content';
 
 const FEATURED_SWATCHES = [
   { src: '/uploads/copentek/textures/80180551-Verde.jpg.webp', name: 'Verde', code: '80180551', size: 'large' },
@@ -11,35 +12,37 @@ const FEATURED_SWATCHES = [
   { src: '/uploads/copentek/textures/80180564-Gris-Claro-Esp.jpg.webp', name: 'Gris claro', code: '80180564', size: 'large' },
 ];
 
-export default function FabricHero() {
+export default function FabricHero({ content = defaultContent }: { content?: SiteContent }) {
+  const copy = content.fabrics.hero;
+
   return (
     <section className="fabric-hero">
       <div className="fabric-hero-copy">
-        <p className="fabric-eyebrow">Alasi Textile Library</p>
+        <p className="fabric-eyebrow">{copy.eyebrow}</p>
         <h1>
-          Choose the fabric before the sun finds it.
+          {copy.title}
         </h1>
         <p>
-          Explore 89 original Advance fabrics, compare finishes, and preview each colour on the Desert or Ares awning model before choosing.
+          {copy.body}
         </p>
 
         <div className="fabric-hero-actions">
-          <Link href="#collection" className="fabric-primary-action">Browse collection</Link>
-          <span>Plain, Classics, Fantasy</span>
+          <Link href="#collection" className="fabric-primary-action">{copy.cta}</Link>
+          <span>{copy.note}</span>
         </div>
 
         <div className="fabric-hero-meta" aria-label="Fabric library details">
-          <span><strong>89</strong> Colours</span>
-          <span><strong>3</strong> Collections</span>
-          <span><strong>2</strong> Models</span>
+          <span><strong>89</strong> {copy.colours}</span>
+          <span><strong>3</strong> {copy.collections}</span>
+          <span><strong>2</strong> {copy.models}</span>
         </div>
       </div>
 
       <div className="fabric-showcase" aria-hidden="true">
         <div className="fabric-showcase-panel">
           <div className="fabric-showcase-top">
-            <span>Live material board</span>
-            <span>Advance · Desert + Ares</span>
+            <span>{copy.boardTitle}</span>
+            <span>{copy.boardMeta}</span>
           </div>
 
           <div className="fabric-swatch-board">

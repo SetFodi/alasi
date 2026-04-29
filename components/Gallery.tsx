@@ -1,13 +1,16 @@
-export default function Gallery() {
+import defaultContent, { type SiteContent } from '@/lib/site-content';
+
+export default function Gallery({ content = defaultContent }: { content?: SiteContent }) {
+  const copy = content.home.projects;
   return (
     <section id="projects" className="site-section projects-section" style={{ background: 'var(--c-brown)', padding: '120px 64px' }}>
       <div className="reveal section-shell" style={{ maxWidth: 1280, margin: '0 auto' }}>
         <div className="section-heading" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 64 }}>
           <div>
-            <p style={{ fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--tweak-accent)', marginBottom: 14 }}>Installed Projects</p>
-            <h2 style={{ fontFamily: 'var(--tweak-font-heading)', fontSize: 52, fontWeight: 300, color: 'var(--c-cream)', lineHeight: 1.1 }}>Shade in the wild</h2>
+            <p style={{ fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--tweak-accent)', marginBottom: 14 }}>{copy.eyebrow}</p>
+            <h2 style={{ fontFamily: 'var(--tweak-font-heading)', fontSize: 52, fontWeight: 300, color: 'var(--c-cream)', lineHeight: 1.1 }}>{copy.title}</h2>
           </div>
-          <a href="#contact" style={{ fontSize: 12, color: 'var(--c-sand)', textDecoration: 'none', letterSpacing: '0.08em', borderBottom: '1px solid rgba(216,196,168,0.35)', paddingBottom: 2 }}>See all projects &rarr;</a>
+          <a href="#contact" style={{ fontSize: 12, color: 'var(--c-sand)', textDecoration: 'none', letterSpacing: '0.08em', borderBottom: '1px solid rgba(216,196,168,0.35)', paddingBottom: 2 }}>{copy.link}</a>
         </div>
 
         <div className="gallery-grid-main" style={{ display: 'grid', gridTemplateColumns: '7fr 5fr', gridTemplateRows: '240px 240px', gap: 6 }}>

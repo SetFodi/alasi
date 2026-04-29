@@ -9,20 +9,25 @@ import About from '@/components/About';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import RevealObserver from '@/components/RevealObserver';
+import { getSiteContent } from '@/lib/content-store';
 
-export default function Home() {
+export const dynamic = 'force-dynamic';
+
+export default async function Home() {
+  const content = await getSiteContent();
+
   return (
     <>
-      <Navbar />
-      <Hero />
+      <Navbar content={content} />
+      <Hero content={content} />
       <Marquee />
-      <Products />
-      <Features />
-      <Gallery />
-      <Process />
-      <About />
-      <Contact />
-      <Footer />
+      <Products content={content} />
+      <Features content={content} />
+      <Gallery content={content} />
+      <Process content={content} />
+      <About content={content} />
+      <Contact content={content} />
+      <Footer content={content} />
       <RevealObserver />
     </>
   );

@@ -1,3 +1,5 @@
+import defaultContent, { type SiteContent } from '@/lib/site-content';
+
 const steps = [
   { n: '01', title: 'Consultation', text: 'We visit your space, listen to your needs, and discuss tailored solutions.' },
   { n: '02', title: 'Measurement', text: 'Precise on-site measurements — no guesswork, no adjustments after installation.' },
@@ -5,14 +7,15 @@ const steps = [
   { n: '04', title: 'Installation', text: 'Our certified team installs with care. Clean, fast, guaranteed.' },
 ];
 
-export default function Process() {
+export default function Process({ content = defaultContent }: { content?: SiteContent }) {
+  const copy = content.home.process;
   return (
     <section className="site-section process-section" style={{ background: 'var(--c-very-dark)', padding: '120px 64px' }}>
       <div className="reveal section-shell" style={{ maxWidth: 1280, margin: '0 auto' }}>
         <div className="section-heading section-heading-center" style={{ textAlign: 'center', marginBottom: 80 }}>
-          <p style={{ fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--tweak-accent)', marginBottom: 16 }}>How it Works</p>
+          <p style={{ fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--tweak-accent)', marginBottom: 16 }}>{copy.eyebrow}</p>
           <h2 style={{ fontFamily: 'var(--tweak-font-heading)', fontSize: 52, fontWeight: 300, color: 'var(--c-cream)' }}>
-            From Measurement<br /><em style={{ fontStyle: 'italic' }}>to Installation</em>
+            {copy.title}<br /><em style={{ fontStyle: 'italic' }}>{copy.titleAccent}</em>
           </h2>
         </div>
         <div className="process-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0, position: 'relative' }}>

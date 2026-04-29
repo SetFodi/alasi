@@ -3,20 +3,26 @@ import Navbar from '@/components/Navbar';
 import FabricHero from '@/components/FabricHero';
 import AdvanceCatalog from '@/components/AdvanceCatalog';
 import BodyClass from '@/components/BodyClass';
+import content from '@/lib/site-content';
+import { getSiteContent } from '@/lib/content-store';
 
 export const metadata: Metadata = {
-  title: 'Alasi — Fabric Library',
-  description: '89 outdoor colours from the Advance collection — preview every one live on a 3D awning model.',
+  title: content.seo.fabricsTitle,
+  description: content.seo.fabricsDescription,
 };
 
-export default function FabricsPage() {
+export const dynamic = 'force-dynamic';
+
+export default async function FabricsPage() {
+  const siteContent = await getSiteContent();
+
   return (
     <>
       <BodyClass className="fabric-page" />
-      <Navbar fabricPage />
+      <Navbar fabricPage content={siteContent} />
       <main className="fabric-main">
-        <FabricHero />
-        <AdvanceCatalog />
+        <FabricHero content={siteContent} />
+        <AdvanceCatalog content={siteContent} />
       </main>
     </>
   );

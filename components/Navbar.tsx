@@ -2,12 +2,14 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import defaultContent, { type SiteContent } from '@/lib/site-content';
 
 interface NavbarProps {
   fabricPage?: boolean;
+  content?: SiteContent;
 }
 
-export default function Navbar({ fabricPage = false }: NavbarProps) {
+export default function Navbar({ fabricPage = false, content = defaultContent }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -24,11 +26,11 @@ export default function Navbar({ fabricPage = false }: NavbarProps) {
         <Image className="brand-logo" src="/uploads/alasi-logo-transparent.png" alt="Alasi" width={120} height={34} style={{ width: 'auto', height: 34 }} />
       </Link>
       <div className="nav-links">
-        <Link href="/#products">Products</Link>
-        <Link href="/#projects">Projects</Link>
-        <Link href="/fabrics">Fabrics</Link>
-        <Link href="/#about">About</Link>
-        <Link href="/#contact" className="btn-outline" style={{ marginRight: 0 }}>Get a Quote</Link>
+        <Link href="/#products">{content.nav.products}</Link>
+        <Link href="/#projects">{content.nav.projects}</Link>
+        <Link href="/fabrics">{content.nav.fabrics}</Link>
+        <Link href="/#about">{content.nav.about}</Link>
+        <Link href="/#contact" className="btn-outline" style={{ marginRight: 0 }}>{content.nav.quote}</Link>
       </div>
     </nav>
   );

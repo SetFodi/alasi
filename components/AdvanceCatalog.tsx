@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
+import defaultContent, { type SiteContent } from '@/lib/site-content';
 
 interface FabricItem {
   name: string;
@@ -36,7 +37,8 @@ async function applyTexture(mv: MV | null, item: FabricItem) {
   mat?.pbrMetallicRoughness?.baseColorTexture.setTexture(texture);
 }
 
-export default function AdvanceCatalog() {
+export default function AdvanceCatalog({ content = defaultContent }: { content?: SiteContent }) {
+  const copy = content.fabrics.catalog;
   const [textures, setTextures] = useState<FabricItem[]>([]);
   const [state, setState] = useState<AdvanceState>({ group: 'plain', coating: 'normal', selected: null });
   const [techOpen, setTechOpen] = useState(false);
@@ -90,7 +92,7 @@ export default function AdvanceCatalog() {
           <aside className="advance-preview">
             <div className="advance-preview-top">
               <div className="advance-preview-title">
-                <span>Live preview</span>
+                <span>{copy.livePreview}</span>
                 <strong>{displaySelected?.code ?? '—'}</strong>
               </div>
               <div className="advance-model-switcher" aria-label="Awning model">
@@ -130,17 +132,17 @@ export default function AdvanceCatalog() {
 
             <div className="advance-model-caption">
               <span>{displaySelected ? `${displaySelected.name} · ${currentModel.label}` : currentModel.label}</span>
-              <span>Drag to rotate</span>
+              <span>{copy.rotateHint}</span>
             </div>
           </aside>
 
           <div className="advance-panel">
             <div className="advance-heading">
               <div>
-                <p className="advance-kicker">Technical fabrics for outdoor use</p>
-                <h2>Advance Collection</h2>
+                <p className="advance-kicker">{copy.kicker}</p>
+                <h2>{copy.title}</h2>
               </div>
-              <Link className="advance-back" href="/">Back home</Link>
+              <Link className="advance-back" href="/">{copy.backHome}</Link>
             </div>
 
             <div className="advance-tabs" aria-label="Fabric collection">
@@ -157,8 +159,8 @@ export default function AdvanceCatalog() {
             </div>
 
             <div className="advance-copy">
-              <p>Water-repellent acrylic awning fabrics with colour stability, stain resistance, and a technical finish made for outdoor shade systems.</p>
-              <button className="advance-tech" type="button" onClick={() => setTechOpen(o => !o)}>Technical characteristics</button>
+              <p>{copy.description}</p>
+              <button className="advance-tech" type="button" onClick={() => setTechOpen(o => !o)}>{copy.technicalButton}</button>
             </div>
 
             <div className="advance-tech-panel" hidden={!techOpen}>
@@ -172,7 +174,7 @@ export default function AdvanceCatalog() {
 
             <div className="advance-status">
               <span>{visible.length} colours</span>
-              <span>{displaySelected ? `${displaySelected.name} / ${displaySelected.code}` : 'Select a fabric'}</span>
+              <span>{displaySelected ? `${displaySelected.name} / ${displaySelected.code}` : copy.selectFallback}</span>
             </div>
 
             <div className="advance-grid" aria-live="polite">
