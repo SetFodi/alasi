@@ -1,5 +1,32 @@
 import defaultContent, { type SiteContent } from '@/lib/site-content';
 
+function ContactLine({ item }: { item: string }) {
+  const isEmail = item.includes('@');
+  const href = isEmail ? `mailto:${item}` : '#';
+
+  return (
+    <a
+      href={href}
+      style={{
+        display: 'block',
+        fontSize: 12,
+        color: 'var(--c-sand)',
+        textDecoration: 'none',
+        marginBottom: 9,
+        opacity: 0.6,
+      }}
+    >
+      {isEmail
+        ? item.split('').map((char, index) => (
+          <span key={`${char}-${index}`} style={char === '@' ? { fontFamily: 'Georgia, serif', fontSize: '1.08em', fontWeight: 700 } : undefined}>
+            {char}
+          </span>
+        ))
+        : item}
+    </a>
+  );
+}
+
 export default function Footer({ content = defaultContent }: { content?: SiteContent }) {
   const copy = content.footer;
 
@@ -36,23 +63,7 @@ export default function Footer({ content = defaultContent }: { content?: SiteCon
           </div>
           <div>
             <p style={{ fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--c-sand)', marginBottom: 18, opacity: 0.5 }}>{copy.contactTitle}</p>
-            {[copy.phone2, copy.phone3, copy.email, copy.addressLine1, copy.addressLine2, copy.country].map(item => (
-              <a
-                key={item}
-                href={item.includes('@') ? `mailto:${item}` : '#'}
-                style={{
-                  display: 'block',
-                  fontFamily: item.includes('@') ? 'Georgia, serif' : undefined,
-                  fontSize: 12,
-                  color: 'var(--c-sand)',
-                  textDecoration: 'none',
-                  marginBottom: 9,
-                  opacity: 0.6,
-                }}
-              >
-                {item}
-              </a>
-            ))}
+            {[copy.phone2, copy.phone3, copy.email, copy.addressLine1, copy.addressLine2, copy.country].map(item => <ContactLine key={item} item={item} />)}
           </div>
         </div>
         <div style={{ borderTop: '1px solid rgba(216,196,168,0.08)', paddingTop: 24, display: 'flex', justifyContent: 'space-between' }}>
