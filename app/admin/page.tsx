@@ -1,5 +1,5 @@
 import { isAdminSession } from '@/lib/admin-auth';
-import { getSiteContent } from '@/lib/content-store';
+import { getSiteContentBoth } from '@/lib/content-store';
 import AdminEditor from './AdminEditor';
 import AdminLogin from './AdminLogin';
 
@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 
 export default async function AdminPage() {
   const authed = await isAdminSession();
-  const content = await getSiteContent();
+  const { en, ka } = await getSiteContentBoth();
 
   return (
     <main className="admin-page">
@@ -20,7 +20,7 @@ export default async function AdminPage() {
           <a href="/" className="admin-link">View site</a>
         </div>
 
-        {authed ? <AdminEditor initialContent={content} /> : <AdminLogin />}
+        {authed ? <AdminEditor initialContentEn={en} initialContentKa={ka} /> : <AdminLogin />}
       </section>
     </main>
   );

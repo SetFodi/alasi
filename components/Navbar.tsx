@@ -32,7 +32,10 @@ export default function Navbar({ fabricPage = false, content = defaultContent }:
         <Link href="/fabrics">{content.nav.fabrics}</Link>
         <Link href="/tech">{content.nav.tech}</Link>
         <Link href="/#about">{content.nav.about}</Link>
-        <Link href="/#contact" className="btn-outline" style={{ marginRight: 0 }}>{content.nav.quote}</Link>
+        <Link href="https://t.me/alasi_awning_system" target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ marginRight: 0, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          {content.nav.quote}
+        </Link>
       </div>
       <LanguageSwitcher />
     </nav>

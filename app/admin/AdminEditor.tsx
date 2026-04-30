@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import type { SiteContent } from '@/lib/site-content';
 
+type Lang = 'en' | 'ka';
 type EditableValue = any;
 
 function clone<T>(value: T): T {
@@ -23,9 +24,9 @@ function setValueAtPath(source: SiteContent, path: string[], value: string) {
 }
 
 function labelFromKey(key: string) {
-  return key
-    .replace(/([A-Z])/g, ' $1')
-    .replace(/^./, (char) => char.toUpperCase());
+  const n = Number(key);
+  if (!Number.isNaN(n)) return `Item ${n + 1}`;
+  return key.replace(/([A-Z])/g, ' $1').replace(/^./, (c) => c.toUpperCase());
 }
 
 function FieldTree({
@@ -45,35 +46,59 @@ function FieldTree({
       <label className="admin-field" htmlFor={id}>
         <span>{labelFromKey(path[path.length - 1])}</span>
         {long ? (
-          <textarea id={id} value={value} rows={4} onChange={(event) => onChange(path, event.target.value)} />
+          <textarea id={id} value={value} rows={4} onChange={(e) => onChange(path, e.target.value)} />
         ) : (
-          <input id={id} value={value} onChange={(event) => onChange(path, event.target.value)} />
+          <input id={id} value={value} onChange={(e) => onChange(path, e.target.value)} />
         )}
       </label>
     );
   }
 
+  if (typeof value === 'boolean' || typeof value === 'number') return null;
+
   return (
     <div className="admin-group">
-      {path.length ? <h2>{path.map(labelFromKey).join(' / ')}</h2> : null}
+      {path.length ? <h2>{path.map(labelFromKey).join(' › ')}</h2> : null}
       <div className="admin-fields">
-        {Object.entries(value).map(([key, child]) => (
-          <FieldTree key={[...path, key].join('.')} value={child} path={[...path, key]} onChange={onChange} />
+        {Object.entries(value as object).map(([key, child]) => (
+          <FieldTree
+            key={[...path, key].join('.')}
+            value={child}
+            path={[...path, key]}
+            onChange={onChange}
+          />
         ))}
       </div>
     </div>
   );
 }
 
-export default function AdminEditor({ initialContent }: { initialContent: SiteContent }) {
+export default function AdminEditor({
+  initialContentEn,
+  initialContentKa,
+}: {
+  initialContentEn: SiteContent;
+  initialContentKa: SiteContent;
+}) {
   const router = useRouter();
-  const [draft, setDraft] = useState<SiteContent>(initialContent);
+  const [activeLang, setActiveLang] = useState<Lang>('en');
+  const [draftEn, setDraftEn] = useState<SiteContent>(initialContentEn);
+  const [draftKa, setDraftKa] = useState<SiteContent>(initialContentKa);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState('');
-  const changed = useMemo(() => JSON.stringify(draft) !== JSON.stringify(initialContent), [draft, initialContent]);
+
+  const changedEn = useMemo(() => JSON.stringify(draftEn) !== JSON.stringify(initialContentEn), [draftEn, initialContentEn]);
+  const changedKa = useMemo(() => JSON.stringify(draftKa) !== JSON.stringify(initialContentKa), [draftKa, initialContentKa]);
+  const changed = changedEn || changedKa;
+
+  const draft = activeLang === 'en' ? draftEn : draftKa;
 
   function update(path: string[], value: string) {
-    setDraft((current) => setValueAtPath(current, path, value));
+    if (activeLang === 'en') {
+      setDraftEn((cur) => setValueAtPath(cur, path, value));
+    } else {
+      setDraftKa((cur) => setValueAtPath(cur, path, value));
+    }
   }
 
   async function publish() {
@@ -83,7 +108,7 @@ export default function AdminEditor({ initialContent }: { initialContent: SiteCo
     const response = await fetch('/api/admin/publish', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ content: draft }),
+      body: JSON.stringify({ en: draftEn, ka: draftKa }),
     });
     const data = await response.json().catch(() => ({}));
     setSaving(false);
@@ -93,7 +118,7 @@ export default function AdminEditor({ initialContent }: { initialContent: SiteCo
       return;
     }
 
-    setMessage('Published. The live site will read the new text on the next page load.');
+    setMessage('Published. Both EN and KA content are now live.');
   }
 
   async function logout() {
@@ -104,16 +129,33 @@ export default function AdminEditor({ initialContent }: { initialContent: SiteCo
   return (
     <div className="admin-card admin-editor">
       <div className="admin-toolbar">
-        <p>Edit text, press publish, and the live site will read the saved content without a redeploy.</p>
+        <p>Edit English and Georgian text, then publish — both languages update at once.</p>
         <div>
           <button type="button" className="admin-secondary" onClick={logout}>Logout</button>
           <button type="button" onClick={publish} disabled={saving || !changed}>
-            {saving ? 'Publishing...' : 'Publish to master'}
+            {saving ? 'Publishing...' : 'Publish both languages'}
           </button>
         </div>
       </div>
 
       {message ? <p className={message.startsWith('Published') ? 'admin-success' : 'admin-error'}>{message}</p> : null}
+
+      <div className="admin-lang-tabs">
+        <button
+          type="button"
+          className={`admin-lang-tab${activeLang === 'en' ? ' active' : ''}${changedEn ? ' dirty' : ''}`}
+          onClick={() => setActiveLang('en')}
+        >
+          English{changedEn ? ' *' : ''}
+        </button>
+        <button
+          type="button"
+          className={`admin-lang-tab${activeLang === 'ka' ? ' active' : ''}${changedKa ? ' dirty' : ''}`}
+          onClick={() => setActiveLang('ka')}
+        >
+          ქართული{changedKa ? ' *' : ''}
+        </button>
+      </div>
 
       <FieldTree value={draft as unknown as EditableValue} path={[]} onChange={update} />
     </div>

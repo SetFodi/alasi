@@ -74,9 +74,13 @@ async function redisCommand<T>(command: unknown[]): Promise<T | null> {
 
 export async function getSiteContent(): Promise<SiteContent> {
   const cookieStore = await cookies();
-  const lang = cookieStore.get('NEXT_LOCALE')?.value || 'en';
-  const defaultContent = lang === 'ka' ? (defaultContentKa as SiteContent) : defaultContentEn;
-  const contentKey = lang === 'ka' ? CONTENT_KEY_KA : CONTENT_KEY_EN;
+  const lang = cookieStore.get('NEXT_LOCALE')?.value || 'ka';
+  return getSiteContentForLang(lang === 'en' ? 'en' : 'ka');
+}
+
+export async function getSiteContentForLang(lang: 'en' | 'ka'): Promise<SiteContent> {
+  const defaultContent = lang === 'en' ? defaultContentEn : (defaultContentKa as SiteContent);
+  const contentKey = lang === 'en' ? CONTENT_KEY_EN : CONTENT_KEY_KA;
 
   try {
     const stored = await redisCommand<string>(['GET', contentKey]);
@@ -87,10 +91,22 @@ export async function getSiteContent(): Promise<SiteContent> {
   }
 }
 
+export async function getSiteContentBoth(): Promise<{ en: SiteContent; ka: SiteContent }> {
+  const [en, ka] = await Promise.all([
+    getSiteContentForLang('en'),
+    getSiteContentForLang('ka'),
+  ]);
+  return { en, ka };
+}
+
 export async function saveSiteContent(content: SiteContent) {
   const cookieStore = await cookies();
-  const lang = cookieStore.get('NEXT_LOCALE')?.value || 'en';
-  const contentKey = lang === 'ka' ? CONTENT_KEY_KA : CONTENT_KEY_EN;
+  const lang = cookieStore.get('NEXT_LOCALE')?.value || 'ka';
+  return saveSiteContentForLang(lang === 'en' ? 'en' : 'ka', content);
+}
+
+export async function saveSiteContentForLang(lang: 'en' | 'ka', content: SiteContent): Promise<boolean> {
+  const contentKey = lang === 'en' ? CONTENT_KEY_EN : CONTENT_KEY_KA;
 
   const config = getRedisConfig();
   if (!config.url || !config.token) {
