@@ -4,18 +4,18 @@ import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import type { SiteContent } from '@/lib/site-content';
 
-type EditableValue = string | { [key: string]: EditableValue };
+type EditableValue = any;
 
 function clone<T>(value: T): T {
   return JSON.parse(JSON.stringify(value)) as T;
 }
 
 function setValueAtPath(source: SiteContent, path: string[], value: string) {
-  const next = clone(source) as Record<string, EditableValue>;
-  let target: Record<string, EditableValue> = next;
+  const next = clone(source) as Record<string, any>;
+  let target: Record<string, any> = next;
 
   for (const key of path.slice(0, -1)) {
-    target = target[key] as Record<string, EditableValue>;
+    target = target[key] as Record<string, any>;
   }
 
   target[path[path.length - 1]] = value;
