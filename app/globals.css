@@ -832,7 +832,7 @@ body {
   .navbar, .navbar.scrolled { align-items: flex-start; flex-wrap: wrap; gap: 12px; padding: 12px 18px; }
   .navbar.scrolled { background: rgba(18,9,8,0.97); }
   .brand-logo { height: 30px; }
-  .nav-links { align-items: center; display: flex; gap: 16px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; width: 100%; }
+  .nav-links { align-items: center; display: flex; gap: 16px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; width: 100%; order: 3; }
   .nav-links::-webkit-scrollbar { display: none; }
   .nav-links a { font-size: 9px; letter-spacing: 0.12em; margin-right: 0; white-space: nowrap; }
   .nav-links .btn-outline { margin-left: auto; padding: 8px 14px; }

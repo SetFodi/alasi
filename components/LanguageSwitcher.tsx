@@ -1,9 +1,16 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
 export default function LanguageSwitcher() {
   const router = useRouter();
-  const currentLang = typeof document !== 'undefined' ? document.cookie.includes('NEXT_LOCALE=ka') ? 'ka' : 'en' : 'en';
+  const [currentLang, setCurrentLang] = useState('en');
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      setCurrentLang(document.cookie.includes('NEXT_LOCALE=ka') ? 'ka' : 'en');
+    }
+  }, []);
 
   function switchLang(lang: string) {
     if (lang === currentLang) return;
@@ -19,7 +26,6 @@ export default function LanguageSwitcher() {
       border: '1px solid rgba(216,196,168,0.12)',
       borderRadius: 24, 
       padding: 3, 
-      marginLeft: 24,
       flexShrink: 0
     }}>
       <button 

@@ -26,7 +26,6 @@ export default function Navbar({ fabricPage = false, content = defaultContent }:
       <Link href="/#hero" className="brand-link" aria-label="Alasi home">
         <Image className="brand-logo" src="/uploads/alasi-logo-transparent.png" alt="Alasi" width={120} height={34} style={{ width: 'auto', height: 34 }} />
       </Link>
-      <LanguageSwitcher />
       <div className="nav-links">
         <Link href="/#products">{content.nav.products}</Link>
         <Link href="/#projects">{content.nav.projects}</Link>
@@ -35,6 +34,7 @@ export default function Navbar({ fabricPage = false, content = defaultContent }:
         <Link href="/#about">{content.nav.about}</Link>
         <Link href="/#contact" className="btn-outline" style={{ marginRight: 0 }}>{content.nav.quote}</Link>
       </div>
+      <LanguageSwitcher />
     </nav>
   );
 }
