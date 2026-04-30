@@ -35,7 +35,7 @@ export default function Footer({ content = defaultContent }: { content?: SiteCon
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <div className="footer-layout" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 60, marginBottom: 56 }}>
           <div>
-            <span style={{ fontFamily: 'var(--font-site)', fontSize: 30, fontWeight: 400, fontStyle: 'italic', color: 'var(--c-cream)', letterSpacing: '0.03em' }}>{copy.brand}</span>
+            <img src="/uploads/alasi-logo-transparent.png" alt={copy.brand} style={{ height: 38, width: 'auto', display: 'block' }} />
             <p style={{ fontSize: 12, color: 'var(--c-sand)', marginTop: 16, lineHeight: 1.75, opacity: 0.6, maxWidth: 260 }}>
               {copy.description}
             </p>
@@ -51,21 +51,14 @@ export default function Footer({ content = defaultContent }: { content?: SiteCon
           </div>
           <div>
             <p style={{ fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--c-sand)', marginBottom: 18, opacity: 0.5 }}>{copy.productsTitle}</p>
-            {[
-              ['Retractable Awnings', '/#products'],
-              ['Balcony Systems', '/#products'],
-              ['CAFE Terraces', '/#products'],
-              ['Pergola Shading', '/#products'],
-              ['Advance Fabrics', '/fabrics'],
-              ['Technical Fabrics', '/tech'],
-            ].map(([item, href]) => (
+            {copy.productsList.map(([item, href]) => (
               <a key={item} href={href} style={{ display: 'block', fontSize: 12, color: 'var(--c-sand)', textDecoration: 'none', marginBottom: 9, opacity: 0.6 }}>{item}</a>
             ))}
           </div>
           <div>
             <p style={{ fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--c-sand)', marginBottom: 18, opacity: 0.5 }}>{copy.companyTitle}</p>
-            {['About Alasi','Projects','Installation','FAQ','Contact'].map(item => (
-              <a key={item} href="#" style={{ display: 'block', fontSize: 12, color: 'var(--c-sand)', textDecoration: 'none', marginBottom: 9, opacity: 0.6 }}>{item}</a>
+            {copy.companyList.map(([item, href]) => (
+              <a key={item} href={href} style={{ display: 'block', fontSize: 12, color: 'var(--c-sand)', textDecoration: 'none', marginBottom: 9, opacity: 0.6 }}>{item}</a>
             ))}
           </div>
           <div>

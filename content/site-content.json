@@ -25,12 +25,24 @@
       "eyebrow": "Our Solutions",
       "title": "Every space deserves",
       "titleAccent": "perfect shade",
-      "body": "Engineered for Georgia's sun, humidity, and coastal winds."
+      "body": "Engineered for Georgia's sun, humidity, and coastal winds.",
+      "list": [
+        { "img": "/uploads/Capture_an_architectural_shot__Nano_Banana_Pro_18949.jpg", "geo": "გასაჭიმი მარქიზა", "name": "Retractable Awnings", "desc": "Motorized and manual fold-arm systems for full sun control. Ideal for residential terraces and hotel spaces." },
+        { "img": "/uploads/Setting_The_elegant_soft-frame_Nano_Banana_Pro_73429.jpg", "geo": "აივნის მარქიზა", "name": "Balcony Awnings", "desc": "Compact, elegant shade for balconies. Optional wind sensors and smooth remote operation." },
+        { "img": "/uploads/awning-chatgpt.jpg", "geo": "კაფე-ტერასა", "name": "CAFE & Restaurant Terraces", "desc": "Wide-span commercial awnings for high-traffic outdoor dining. Durable, branded, and long-lasting." },
+        { "img": "/uploads/image1.jpg", "geo": "პერგოლა", "name": "Pergola Shading Systems", "desc": "Louvered architectural pergolas offering year-round comfort with rain and UV protection." }
+      ]
     },
     "features": {
       "eyebrow": "Why Alasi",
       "title": "Engineered Comfort.",
-      "titleAccent": "Designed Elegance."
+      "titleAccent": "Designed Elegance.",
+      "list": [
+        { "icon": "☀", "title": "UV Protection", "text": "Blocks up to 95% of UV rays. Certified outdoor fabrics protect people and furnishings from direct sunlight." },
+        { "icon": "🌧", "title": "Weather Resistant", "text": "Acrylic-woven textiles rated for coastal humidity, heavy rain, and coastal wind. Colorfastness for 5+ years." },
+        { "icon": "⚙", "title": "Motorized or Manual", "text": "Smooth electric motors with remote and wind sensor, or classic hand-crank — both built to last decades." },
+        { "icon": "📐", "title": "Custom Sizing", "text": "Every system is measured, fabricated, and installed on-site by our certified team. No standard sizes — only yours.", "last": true }
+      ]
     },
     "projects": {
       "eyebrow": "Installed Projects",
@@ -40,7 +52,13 @@
     "process": {
       "eyebrow": "How it Works",
       "title": "From Measurement",
-      "titleAccent": "to Installation"
+      "titleAccent": "to Installation",
+      "list": [
+        { "n": "01", "title": "Consultation", "text": "We visit your space, listen to your needs, and discuss tailored solutions." },
+        { "n": "02", "title": "Measurement", "text": "Precise on-site measurements — no guesswork, no adjustments after installation." },
+        { "n": "03", "title": "Selection", "text": "Choose your fabric, mechanism, and colour from our full collection." },
+        { "n": "04", "title": "Installation", "text": "Our certified team installs with care. Clean, fast, guaranteed." }
+      ]
     },
     "about": {
       "eyebrow": "Our Story",
@@ -124,7 +142,22 @@
     "description": "Premium retractable awning systems for Georgian homes, CAFES, and outdoor spaces.",
     "location": "ბათუმი, აჭარა, საქართველო",
     "productsTitle": "Products",
+    "productsList": [
+      ["Retractable Awnings", "/#products"],
+      ["Balcony Systems", "/#products"],
+      ["CAFE Terraces", "/#products"],
+      ["Pergola Shading", "/#products"],
+      ["Advance Fabrics", "/fabrics"],
+      ["Technical Fabrics", "/tech"]
+    ],
     "companyTitle": "Company",
+    "companyList": [
+      ["About Alasi", "#"],
+      ["Projects", "#"],
+      ["Installation", "#"],
+      ["FAQ", "#"],
+      ["Contact", "#"]
+    ],
     "contactTitle": "Contact",
     "copyright": "© 2026 Alasi. All rights reserved.",
     "tagline": "Premium Awning Systems · Georgia",

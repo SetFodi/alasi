@@ -29,6 +29,7 @@
 html {
   scroll-behavior: smooth;
   background: var(--c-very-dark);
+  overflow-x: hidden;
 }
 html.fabric-page {
   background: #120908;
@@ -82,13 +83,20 @@ body {
 .preloader-video-wrapper {
   position: relative;
   width: 280px;
-  overflow: visible;
+  overflow: hidden;
+  border-radius: 4px;
   opacity: 0;
   transform: translateY(14px);
   animation: preReveal 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s forwards;
   margin-bottom: -10px;
 }
-.preloader-video { width: 100%; height: auto; display: block; }
+.preloader-video {
+  width: 110%;
+  height: auto;
+  display: block;
+  transform: scale(1.1) translate(-2%, -6%);
+  mix-blend-mode: screen;
+}
 
 .preloader-logo {
   display: block;
@@ -830,7 +838,7 @@ body {
   .nav-links .btn-outline { margin-left: auto; padding: 8px 14px; }
   .site-hero { min-height: auto !important; }
   .hero-layout { grid-template-columns: 1fr !important; padding: 128px 20px 64px !important; gap: 26px !important; }
-  .hero-copy h1 { font-size: clamp(44px,15vw,64px) !important; line-height: 1 !important; }
+  .hero-copy h1 { font-size: clamp(34px, 12vw, 52px) !important; line-height: 1.05 !important; overflow-wrap: break-word; hyphens: auto; }
   .hero-copy p { max-width: none !important; }
   .hero-actions { display: grid !important; grid-template-columns: 1fr; }
   .hero-actions a, .contact-actions a { justify-content: center; text-align: center; width: 100%; }
@@ -840,7 +848,7 @@ body {
   .site-marquee { padding: 13px 0 !important; }
   .site-section { padding: 74px 20px !important; }
   .section-heading { align-items: flex-start !important; flex-direction: column !important; gap: 18px; margin-bottom: 36px !important; }
-  .section-heading h2 { font-size: clamp(38px,12vw,52px) !important; }
+  .section-heading h2 { font-size: clamp(32px, 11vw, 46px) !important; overflow-wrap: break-word; hyphens: auto; }
   .section-heading p:last-child { max-width: none !important; text-align: left !important; }
   .section-heading-center { align-items: center !important; text-align: center !important; }
   .products-grid, .features-grid, .process-grid, .gallery-grid-secondary, .about-layout, .footer-layout { grid-template-columns: 1fr !important; }

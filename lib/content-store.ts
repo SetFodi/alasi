@@ -1,6 +1,9 @@
-import defaultContent, { type SiteContent } from '@/lib/site-content';
+import defaultContentEn, { type SiteContent } from '@/lib/site-content';
+import defaultContentKa from '@/content/site-content-ka.json';
+import { cookies } from 'next/headers';
 
-const CONTENT_KEY = process.env.CONTENT_KV_KEY || 'alasi:site-content';
+const CONTENT_KEY_EN = process.env.CONTENT_KV_KEY || 'alasi:site-content';
+const CONTENT_KEY_KA = process.env.CONTENT_KV_KEY_KA || 'alasi:site-content:ka';
 
 function getRedisConfig() {
   return {
@@ -70,8 +73,13 @@ async function redisCommand<T>(command: unknown[]): Promise<T | null> {
 }
 
 export async function getSiteContent(): Promise<SiteContent> {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get('NEXT_LOCALE')?.value || 'en';
+  const defaultContent = lang === 'ka' ? (defaultContentKa as SiteContent) : defaultContentEn;
+  const contentKey = lang === 'ka' ? CONTENT_KEY_KA : CONTENT_KEY_EN;
+
   try {
-    const stored = await redisCommand<string>(['GET', CONTENT_KEY]);
+    const stored = await redisCommand<string>(['GET', contentKey]);
     if (!stored) return defaultContent;
     return normalizeText(deepMerge(defaultContent, JSON.parse(stored))) as SiteContent;
   } catch {
@@ -80,12 +88,16 @@ export async function getSiteContent(): Promise<SiteContent> {
 }
 
 export async function saveSiteContent(content: SiteContent) {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get('NEXT_LOCALE')?.value || 'en';
+  const contentKey = lang === 'ka' ? CONTENT_KEY_KA : CONTENT_KEY_EN;
+
   const config = getRedisConfig();
   if (!config.url || !config.token) {
     throw new Error('Missing KV_REST_API_URL and KV_REST_API_TOKEN env vars.');
   }
 
-  const result = await redisCommand<string>(['SET', CONTENT_KEY, JSON.stringify(content)]);
+  const result = await redisCommand<string>(['SET', contentKey, JSON.stringify(content)]);
   if (result !== 'OK') throw new Error('Content storage did not confirm the save.');
   return true;
 }
