@@ -2,7 +2,7 @@
   "nav": {
     "products": "Products",
     "projects": "Projects",
-    "fabrics": "Awning system",
+    "fabrics": "Awning System",
     "tech": "Pergola",
     "about": "About",
     "quote": "Telegram"
@@ -119,7 +119,8 @@
       "title": "Technical shade for demanding outdoor spaces.",
       "body": "Explore PVC, blackout, screen, and Soltis textiles for pergolas, facade screens, and exposed outdoor systems. Preview every colour live on Clima Rain, Nexus Cable, or SC Curve.",
       "cta": "Browse tech fabrics",
-      "secondaryCta": "Advance fabrics",
+      "secondaryCta": "Advance Awning System",
+      "catalogDownload": "Catalogue",
       "colours": "Colours",
       "categories": "Categories",
       "systems": "Systems",
@@ -129,7 +130,7 @@
     "catalog": {
       "kicker": "Technical fabrics for outdoor systems",
       "title": "Tech Collection",
-      "backFabrics": "Back to fabrics",
+      "backFabrics": "Back to Awning System",
       "description": "Built for stronger solar control, privacy, weather exposure, and clean architectural installations.",
       "technicalButton": "Technical characteristics",
       "livePreview": "Live preview",
@@ -147,8 +148,8 @@
       ["Balcony Systems", "/#products"],
       ["CAFE Terraces", "/#products"],
       ["Pergola Shading", "/#products"],
-      ["Advance Fabrics", "/fabrics"],
-      ["Technical Fabrics", "/tech"]
+      ["Advance Awning System", "/fabrics"],
+      ["Technical Awning System", "/tech"]
     ],
     "companyTitle": "Company",
     "companyList": [
