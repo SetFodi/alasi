@@ -13,10 +13,9 @@ export default function LanguageSwitcher() {
   }, []);
 
   function switchLang(lang: string) {
-    if (lang === currentLang) return;
     document.cookie = `NEXT_LOCALE=${lang}; path=/; max-age=31536000`;
     setCurrentLang(lang);
-    router.refresh();
+    window.location.reload();
   }
 
   return (
