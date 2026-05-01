@@ -303,6 +303,10 @@ body {
 .admin-card .admin-secondary {
   background: transparent;
 }
+.admin-card .admin-danger {
+  color: #ffb4a8;
+  border-color: rgba(255,180,168,0.3);
+}
 .admin-editor {
   padding: 24px;
 }

@@ -85,6 +85,7 @@ export default function AdminEditor({
   const [draftEn, setDraftEn] = useState<SiteContent>(initialContentEn);
   const [draftKa, setDraftKa] = useState<SiteContent>(initialContentKa);
   const [saving, setSaving] = useState(false);
+  const [resetting, setResetting] = useState(false);
   const [message, setMessage] = useState('');
 
   const changedEn = useMemo(() => JSON.stringify(draftEn) !== JSON.stringify(initialContentEn), [draftEn, initialContentEn]);
@@ -121,6 +122,24 @@ export default function AdminEditor({
     setMessage('Published. Both EN and KA content are now live.');
   }
 
+  async function resetToDefaults() {
+    if (!confirm('Reset both languages to JSON defaults? All admin edits in Redis will be deleted.')) return;
+    setResetting(true);
+    setMessage('');
+    const response = await fetch('/api/admin/reset', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ lang: 'both' }),
+    });
+    const data = await response.json().catch(() => ({}));
+    setResetting(false);
+    if (!response.ok) {
+      setMessage(data.error || 'Reset failed.');
+      return;
+    }
+    router.refresh();
+  }
+
   async function logout() {
     await fetch('/api/admin/logout', { method: 'POST' });
     router.refresh();
@@ -132,6 +151,9 @@ export default function AdminEditor({
         <p>Edit English and Georgian text, then publish — both languages update at once.</p>
         <div>
           <button type="button" className="admin-secondary" onClick={logout}>Logout</button>
+          <button type="button" className="admin-secondary admin-danger" onClick={resetToDefaults} disabled={resetting}>
+            {resetting ? 'Resetting...' : 'Reset to defaults'}
+          </button>
           <button type="button" onClick={publish} disabled={saving || !changed}>
             {saving ? 'Publishing...' : 'Publish both languages'}
           </button>
