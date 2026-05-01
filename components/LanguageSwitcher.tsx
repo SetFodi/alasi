@@ -4,17 +4,18 @@ import { useState, useEffect } from 'react';
 
 export default function LanguageSwitcher() {
   const router = useRouter();
-  const [currentLang, setCurrentLang] = useState('en');
+  const [currentLang, setCurrentLang] = useState('ka');
 
   useEffect(() => {
     if (typeof document !== 'undefined') {
-      setCurrentLang(document.cookie.includes('NEXT_LOCALE=ka') ? 'ka' : 'en');
+      setCurrentLang(document.cookie.includes('NEXT_LOCALE=en') ? 'en' : 'ka');
     }
   }, []);
 
   function switchLang(lang: string) {
     if (lang === currentLang) return;
     document.cookie = `NEXT_LOCALE=${lang}; path=/; max-age=31536000`;
+    setCurrentLang(lang);
     router.refresh();
   }
 
