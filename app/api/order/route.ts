@@ -74,19 +74,38 @@ export async function POST(request: Request) {
     );
   }
 
+  const selectedFabricLabel =
+    body.selectedFabricName
+      ? [
+        body.selectedModel,
+        body.selectedFabricName,
+        body.selectedFabricCode ? `(${body.selectedFabricCode})` : '',
+      ].filter(Boolean).join(' ')
+      : body.fabric === 'acrylic' ? 'Acrylic' : 'Polyester';
+
   const sheetData = {
+    secret: process.env.GOOGLE_SHEETS_WEBHOOK_SECRET || '',
     timestamp: new Date().toISOString(),
     name,
     phone,
     selectedModel: body.selectedModel || '',
     selectedFabricName: body.selectedFabricName || '',
     selectedFabricCode: body.selectedFabricCode || '',
+    selectedFabricLabel,
     system: body.system === 'turkey' ? 'Turkey' : 'Germany',
     fabric: body.fabric === 'acrylic' ? 'Acrylic' : 'Polyester',
     control: body.control === 'motorized' ? 'Motorized' : 'Manual',
     width: body.width,
     extension: body.extension,
     totalPrice,
+    row: [
+      `${body.width} მ`,
+      `${body.extension} მ`,
+      selectedFabricLabel,
+      `${totalPrice} ₾`,
+      name,
+      phone,
+    ],
   };
 
   try {
