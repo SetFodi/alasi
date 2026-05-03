@@ -1,6 +1,15 @@
 var SHEET_ID = '1Ho5CZLXcNhgRtN-Wmtudr6_gYbWGq6pUV0ZJcnCkpd8';
 var WEBHOOK_SECRET = 'zamtaria2004';
 
+function doGet() {
+  var output = ContentService.createTextOutput(JSON.stringify({
+    ok: true,
+    message: 'Alasi Google Sheets webhook is live'
+  }));
+  output.setMimeType(ContentService.MimeType.JSON);
+  return output;
+}
+
 function doPost(e) {
   var payload = JSON.parse(e.postData.contents || '{}');
 
@@ -21,7 +30,7 @@ function doPost(e) {
     row = [
       payload.width ? payload.width + ' მ' : '',
       payload.extension ? payload.extension + ' მ' : '',
-    payload.selectedFabricLabel || payload.selectedFabricName || payload.fabric || '',
+      payload.selectedFabricLabel || payload.selectedFabricName || payload.fabric || '',
       payload.totalPrice ? payload.totalPrice + ' ₾' : '',
       payload.name || '',
       payload.phone || ''
