@@ -1,13 +1,15 @@
 import { isAdminSession } from '@/lib/admin-auth';
 import { getSiteContentBoth } from '@/lib/content-store';
+import { getPricing } from '@/lib/pricing-store';
 import AdminEditor from './AdminEditor';
 import AdminLogin from './AdminLogin';
+import AdminPricing from './AdminPricing';
 
 export const dynamic = 'force-dynamic';
 
 export default async function AdminPage() {
   const authed = await isAdminSession();
-  const { en, ka } = await getSiteContentBoth();
+  const [{ en, ka }, pricing] = await Promise.all([getSiteContentBoth(), getPricing()]);
 
   return (
     <main className="admin-page">
@@ -20,7 +22,14 @@ export default async function AdminPage() {
           <a href="/" className="admin-link">View site</a>
         </div>
 
-        {authed ? <AdminEditor initialContentEn={en} initialContentKa={ka} /> : <AdminLogin />}
+        {authed ? (
+          <div className="admin-stack">
+            <AdminPricing initial={pricing} />
+            <AdminEditor initialContentEn={en} initialContentKa={ka} />
+          </div>
+        ) : (
+          <AdminLogin />
+        )}
       </section>
     </main>
   );
