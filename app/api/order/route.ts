@@ -103,6 +103,7 @@ export async function POST(request: Request) {
       `${body.extension} მ`,
       selectedFabricLabel,
       `${totalPrice} ₾`,
+      '',
       name,
       phone,
     ],

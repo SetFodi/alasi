@@ -10,8 +10,9 @@ The current site sends this row order:
 2. გაშლა
 3. ქსოვილი
 4. ფასი
-5. სახელი გვარი
-6. ტელ ნომერი
+5. empty spacer column
+6. სახელი გვარი
+7. ტელ ნომერი
 
 ## Setup
 
