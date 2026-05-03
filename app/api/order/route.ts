@@ -82,6 +82,8 @@ export async function POST(request: Request) {
         body.selectedFabricCode ? `(${body.selectedFabricCode})` : '',
       ].filter(Boolean).join(' ')
       : body.fabric === 'acrylic' ? 'Acrylic' : 'Polyester';
+  const controlLabel = body.control === 'motorized' ? 'Motorized' : 'Manual';
+  const formattedPrice = `${totalPrice.toLocaleString('en-US')} ₾`;
 
   const sheetData = {
     secret: process.env.GOOGLE_SHEETS_WEBHOOK_SECRET || '',
@@ -94,7 +96,7 @@ export async function POST(request: Request) {
     selectedFabricLabel,
     system: body.system === 'turkey' ? 'Turkey' : 'Germany',
     fabric: body.fabric === 'acrylic' ? 'Acrylic' : 'Polyester',
-    control: body.control === 'motorized' ? 'Motorized' : 'Manual',
+    control: controlLabel,
     width: body.width,
     extension: body.extension,
     totalPrice,
@@ -102,8 +104,8 @@ export async function POST(request: Request) {
       `${body.width} მ`,
       `${body.extension} მ`,
       selectedFabricLabel,
-      `${totalPrice} ₾`,
-      '',
+      formattedPrice,
+      controlLabel,
       name,
       phone,
     ],

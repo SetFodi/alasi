@@ -32,7 +32,7 @@ function doPost(e) {
       payload.extension ? payload.extension + ' მ' : '',
       payload.selectedFabricLabel || payload.selectedFabricName || payload.fabric || '',
       payload.totalPrice ? payload.totalPrice + ' ₾' : '',
-      '',
+      payload.control || '',
       payload.name || '',
       payload.phone || ''
     ];

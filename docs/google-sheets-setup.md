@@ -10,7 +10,7 @@ The current site sends this row order:
 2. გაშლა
 3. ქსოვილი
 4. ფასი
-5. empty spacer column
+5. ძრავი
 6. სახელი გვარი
 7. ტელ ნომერი
 
