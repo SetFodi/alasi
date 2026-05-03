@@ -47,7 +47,7 @@ export function calculatePrice(input: CalculatorInput, pricing: PricingConfig): 
   const usdCost = L * Psys + S * Pfab + Pmotor;
   const totalGel = usdCost * pricing.marginCoefficient * pricing.usdRate;
 
-  return Math.round(totalGel);
+  return Math.ceil(totalGel / 10) * 10;
 }
 
 export function isValidDimensions(width: number, extension: number): boolean {
