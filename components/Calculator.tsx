@@ -39,6 +39,10 @@ export interface CalculatorCopy {
   submitting: string;
   success: string;
   error: string;
+  aresEyebrow?: string;
+  aresTitle?: string;
+  aresSubtitle?: string;
+  aresSubmit?: string;
 }
 
 export default function Calculator({

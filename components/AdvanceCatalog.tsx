@@ -151,10 +151,10 @@ export default function AdvanceCatalog({
                   pricing={pricing}
                   copy={{
                     ...calculatorCopy,
-                    eyebrow: 'Ares quote',
-                    title: 'გაიგე ფასი',
-                    subtitle: 'ზომები და არჩეული ფერი ავტომატურად გაეგზავნება გუნდს.',
-                    submit: 'გაიგე ფასი',
+                    eyebrow: calculatorCopy.aresEyebrow ?? calculatorCopy.eyebrow,
+                    title: calculatorCopy.aresTitle ?? calculatorCopy.title,
+                    subtitle: calculatorCopy.aresSubtitle ?? calculatorCopy.subtitle,
+                    submit: calculatorCopy.aresSubmit ?? calculatorCopy.submit,
                   }}
                   selectedModel="Ares"
                   selectedFabric={displaySelected ? { name: displaySelected.name, code: displaySelected.code } : undefined}

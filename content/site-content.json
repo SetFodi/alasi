@@ -4,7 +4,6 @@
     "projects": "Projects",
     "fabrics": "Awning System",
     "tech": "Pergola",
-    "calculator": "Calculator",
     "about": "About",
     "quote": "Telegram"
   },
@@ -196,7 +195,11 @@
     "submit": "Request order",
     "submitting": "Sending...",
     "success": "Thanks! We'll be in touch shortly.",
-    "error": "Something went wrong. Please try again or call us."
+    "error": "Something went wrong. Please try again or call us.",
+    "aresEyebrow": "Ares Quote",
+    "aresTitle": "Get a price",
+    "aresSubtitle": "Dimensions and your selected colour will be sent to our team automatically.",
+    "aresSubmit": "Get price"
   },
   "seo": {
     "homeTitle": "Alasi — Premium Awnings Georgia",
