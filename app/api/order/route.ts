@@ -118,6 +118,10 @@ export async function POST(request: Request) {
       const text = await response.text().catch(() => '');
       throw new Error(`Webhook failed (${response.status}): ${text}`);
     }
+    const result = await response.json().catch(() => ({ ok: true }));
+    if (result && result.ok === false) {
+      throw new Error(result.error || 'Google Sheets webhook rejected the request.');
+    }
     return NextResponse.json({ ok: true, totalPrice });
   } catch (error) {
     return NextResponse.json(

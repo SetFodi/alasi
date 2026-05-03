@@ -1,27 +1,36 @@
-const SHEET_ID = '1Ho5CZLXcNhgRtN-Wmtudr6_gYbWGq6pUV0ZJcnCkpd8';
-const WEBHOOK_SECRET = '';
+var SHEET_ID = '1Ho5CZLXcNhgRtN-Wmtudr6_gYbWGq6pUV0ZJcnCkpd8';
+var WEBHOOK_SECRET = 'zamtaria2004';
 
 function doPost(e) {
-  const payload = JSON.parse(e.postData.contents || '{}');
+  var payload = JSON.parse(e.postData.contents || '{}');
+
   if (WEBHOOK_SECRET && payload.secret !== WEBHOOK_SECRET) {
-    return ContentService
-      .createTextOutput(JSON.stringify({ ok: false, error: 'Unauthorized' }))
-      .setMimeType(ContentService.MimeType.JSON);
+    var unauthorized = ContentService.createTextOutput(JSON.stringify({
+      ok: false,
+      error: 'Unauthorized'
+    }));
+    unauthorized.setMimeType(ContentService.MimeType.JSON);
+    return unauthorized;
   }
 
-  const spreadsheet = SpreadsheetApp.openById(SHEET_ID);
-  const sheet = spreadsheet.getSheets()[0];
+  var spreadsheet = SpreadsheetApp.openById(SHEET_ID);
+  var sheet = spreadsheet.getSheets()[0];
+  var row = payload.row;
 
-  sheet.appendRow(payload.row || [
-    payload.width ? `${payload.width} მ` : '',
-    payload.extension ? `${payload.extension} მ` : '',
+  if (!row) {
+    row = [
+      payload.width ? payload.width + ' მ' : '',
+      payload.extension ? payload.extension + ' მ' : '',
     payload.selectedFabricLabel || payload.selectedFabricName || payload.fabric || '',
-    payload.totalPrice ? `${payload.totalPrice} ₾` : '',
-    payload.name || '',
-    payload.phone || '',
-  ]);
+      payload.totalPrice ? payload.totalPrice + ' ₾' : '',
+      payload.name || '',
+      payload.phone || ''
+    ];
+  }
 
-  return ContentService
-    .createTextOutput(JSON.stringify({ ok: true }))
-    .setMimeType(ContentService.MimeType.JSON);
+  sheet.appendRow(row);
+
+  var output = ContentService.createTextOutput(JSON.stringify({ ok: true }));
+  output.setMimeType(ContentService.MimeType.JSON);
+  return output;
 }
