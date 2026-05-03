@@ -14,6 +14,9 @@ export const runtime = 'nodejs';
 interface OrderRequest extends CalculatorInput {
   name: string;
   phone: string;
+  selectedFabricName?: string;
+  selectedFabricCode?: string;
+  selectedModel?: string;
 }
 
 function isValidSystem(v: unknown): v is SystemType {
@@ -75,6 +78,9 @@ export async function POST(request: Request) {
     timestamp: new Date().toISOString(),
     name,
     phone,
+    selectedModel: body.selectedModel || '',
+    selectedFabricName: body.selectedFabricName || '',
+    selectedFabricCode: body.selectedFabricCode || '',
     system: body.system === 'turkey' ? 'Turkey' : 'Germany',
     fabric: body.fabric === 'acrylic' ? 'Acrylic' : 'Polyester',
     control: body.control === 'motorized' ? 'Motorized' : 'Manual',

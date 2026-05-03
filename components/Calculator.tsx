@@ -44,9 +44,15 @@ export interface CalculatorCopy {
 export default function Calculator({
   pricing,
   copy,
+  selectedFabric,
+  selectedModel,
+  compact = false,
 }: {
   pricing: PricingConfig;
   copy: CalculatorCopy;
+  selectedFabric?: { name: string; code?: string };
+  selectedModel?: string;
+  compact?: boolean;
 }) {
   const [width, setWidth] = useState(3.0);
   const [extension, setExtension] = useState(2.0);
@@ -89,6 +95,9 @@ export default function Calculator({
         control,
         name: name.trim(),
         phone: phone.trim(),
+        selectedFabricName: selectedFabric?.name,
+        selectedFabricCode: selectedFabric?.code,
+        selectedModel,
       }),
     });
     const data = await res.json().catch(() => ({}));
@@ -106,7 +115,7 @@ export default function Calculator({
   }
 
   return (
-    <section className="calc-section">
+    <section className={`calc-section${compact ? ' calc-section-compact' : ''}`}>
       <div className="calc-shell">
         <div className="calc-header">
           <p className="calc-eyebrow">{copy.eyebrow}</p>
@@ -226,6 +235,14 @@ export default function Calculator({
               </div>
             </div>
           </div>
+
+          {selectedFabric && (
+            <div className="calc-selected-fabric">
+              <span>Selected Ares colour</span>
+              <strong>{selectedFabric.name}</strong>
+              {selectedFabric.code && <em>{selectedFabric.code}</em>}
+            </div>
+          )}
 
           {!valid && <p className="calc-warning">{copy.validation}</p>}
 

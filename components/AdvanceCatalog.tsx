@@ -2,6 +2,8 @@
 import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import defaultContent, { type SiteContent } from '@/lib/site-content';
+import Calculator, { type CalculatorCopy } from '@/components/Calculator';
+import type { PricingConfig } from '@/lib/pricing';
 
 interface FabricItem {
   name: string;
@@ -37,7 +39,15 @@ async function applyTexture(mv: MV | null, item: FabricItem) {
   mat?.pbrMetallicRoughness?.baseColorTexture.setTexture(texture);
 }
 
-export default function AdvanceCatalog({ content = defaultContent }: { content?: SiteContent }) {
+export default function AdvanceCatalog({
+  content = defaultContent,
+  pricing,
+  calculatorCopy,
+}: {
+  content?: SiteContent;
+  pricing?: PricingConfig;
+  calculatorCopy?: CalculatorCopy;
+}) {
   const copy = content.fabrics.catalog;
   const [textures, setTextures] = useState<FabricItem[]>([]);
   const [state, setState] = useState<AdvanceState>({ group: 'plain', coating: 'normal', selected: null });
@@ -133,6 +143,24 @@ export default function AdvanceCatalog({ content = defaultContent }: { content?:
               <span>{displaySelected ? `${displaySelected.name} · ${currentModel.label}` : currentModel.label}</span>
               <span>{copy.rotateHint}</span>
             </div>
+
+            {activeModel === 'ares' && pricing && calculatorCopy && (
+              <div className="ares-calculator">
+                <Calculator
+                  compact
+                  pricing={pricing}
+                  copy={{
+                    ...calculatorCopy,
+                    eyebrow: 'Ares quote',
+                    title: 'გაიგე ფასი',
+                    subtitle: 'ზომები და არჩეული ფერი ავტომატურად გაეგზავნება გუნდს.',
+                    submit: 'გაიგე ფასი',
+                  }}
+                  selectedModel="Ares"
+                  selectedFabric={displaySelected ? { name: displaySelected.name, code: displaySelected.code } : undefined}
+                />
+              </div>
+            )}
           </aside>
 
           <div className="advance-panel">

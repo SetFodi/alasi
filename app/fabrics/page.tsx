@@ -5,6 +5,8 @@ import AdvanceCatalog from '@/components/AdvanceCatalog';
 import BodyClass from '@/components/BodyClass';
 import content from '@/lib/site-content';
 import { getSiteContent } from '@/lib/content-store';
+import { getPricing } from '@/lib/pricing-store';
+import type { CalculatorCopy } from '@/components/Calculator';
 
 export const metadata: Metadata = {
   title: content.seo.fabricsTitle,
@@ -14,7 +16,8 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic';
 
 export default async function FabricsPage() {
-  const siteContent = await getSiteContent();
+  const [siteContent, pricing] = await Promise.all([getSiteContent(), getPricing()]);
+  const calculatorCopy = (siteContent as unknown as { calculator?: CalculatorCopy }).calculator!;
 
   return (
     <>
@@ -22,7 +25,7 @@ export default async function FabricsPage() {
       <Navbar fabricPage content={siteContent} />
       <main className="fabric-main">
         <FabricHero content={siteContent} />
-        <AdvanceCatalog content={siteContent} />
+        <AdvanceCatalog content={siteContent} pricing={pricing} calculatorCopy={calculatorCopy} />
       </main>
     </>
   );
