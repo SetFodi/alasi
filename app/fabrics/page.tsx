@@ -11,6 +11,18 @@ import type { CalculatorCopy } from '@/components/Calculator';
 export const metadata: Metadata = {
   title: content.seo.fabricsTitle,
   description: content.seo.fabricsDescription,
+  keywords: content.seo.keywords,
+  alternates: {
+    canonical: '/fabrics',
+  },
+  openGraph: {
+    title: content.seo.fabricsTitle,
+    description: content.seo.fabricsDescription,
+    url: 'https://alasi.ge/fabrics',
+    siteName: 'Alasi',
+    locale: 'ka_GE',
+    type: 'website',
+  },
 };
 
 export const dynamic = 'force-dynamic';

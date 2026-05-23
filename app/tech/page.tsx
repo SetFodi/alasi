@@ -10,6 +10,18 @@ import { getSiteContent } from '@/lib/content-store';
 export const metadata: Metadata = {
   title: content.seo.techTitle,
   description: content.seo.techDescription,
+  keywords: content.seo.keywords,
+  alternates: {
+    canonical: '/tech',
+  },
+  openGraph: {
+    title: content.seo.techTitle,
+    description: content.seo.techDescription,
+    url: 'https://alasi.ge/tech',
+    siteName: 'Alasi',
+    locale: 'ka_GE',
+    type: 'website',
+  },
 };
 
 export const dynamic = 'force-dynamic';
