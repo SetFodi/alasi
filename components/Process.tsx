@@ -3,7 +3,7 @@ import defaultContent, { type SiteContent } from '@/lib/site-content';
 export default function Process({ content = defaultContent }: { content?: SiteContent }) {
   const copy = content.home.process;
   return (
-    <section className="site-section process-section" style={{ background: 'var(--c-very-dark)', padding: '120px 64px' }}>
+    <section id="process" className="site-section process-section" style={{ background: 'var(--c-very-dark)', padding: '120px 64px' }}>
       <div className="reveal section-shell" style={{ maxWidth: 1280, margin: '0 auto' }}>
         <div className="section-heading section-heading-center" style={{ textAlign: 'center', marginBottom: 80 }}>
           <p style={{ fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--tweak-accent)', marginBottom: 16 }}>{copy.eyebrow}</p>

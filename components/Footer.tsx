@@ -1,30 +1,42 @@
 import defaultContent, { type SiteContent } from '@/lib/site-content';
 import { getServicePath, servicePages } from '@/lib/service-pages';
+import LeadLink from './LeadLink';
+
+const COMPANY_LINK_FALLBACKS = ['/#about', '/#projects', '/#process', '/services', '/#contact'];
 
 function ContactLine({ item }: { item: string }) {
   const isEmail = item.includes('@');
-  const href = isEmail ? `mailto:${item}` : '#';
+  const phone = item.replace(/[^\d+]/g, '');
+  const isPhone = phone.startsWith('+995') && phone.length >= 12;
+  const href = isEmail ? `mailto:${item}` : isPhone ? `tel:${phone}` : '#';
+  const style = {
+    display: 'block',
+    fontSize: 12,
+    color: 'var(--c-sand)',
+    textDecoration: 'none',
+    marginBottom: 9,
+    opacity: 0.6,
+  };
+  const content = isEmail
+    ? item.split('').map((char, index) => (
+      <span key={`${char}-${index}`} style={char === '@' ? { fontFamily: 'Georgia, serif', fontSize: '1.08em', fontWeight: 700 } : undefined}>
+        {char}
+      </span>
+    ))
+    : item;
+
+  if (!isEmail && !isPhone) {
+    return <span style={style}>{content}</span>;
+  }
 
   return (
-    <a
+    <LeadLink
+      leadType={isEmail ? 'email' : 'phone'}
       href={href}
-      style={{
-        display: 'block',
-        fontSize: 12,
-        color: 'var(--c-sand)',
-        textDecoration: 'none',
-        marginBottom: 9,
-        opacity: 0.6,
-      }}
+      style={style}
     >
-      {isEmail
-        ? item.split('').map((char, index) => (
-          <span key={`${char}-${index}`} style={char === '@' ? { fontFamily: 'Georgia, serif', fontSize: '1.08em', fontWeight: 700 } : undefined}>
-            {char}
-          </span>
-        ))
-        : item}
-    </a>
+      {content}
+    </LeadLink>
   );
 }
 
@@ -61,8 +73,8 @@ export default function Footer({ content = defaultContent }: { content?: SiteCon
           </div>
           <div>
             <p style={{ fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--c-sand)', marginBottom: 18, opacity: 0.5 }}>{copy.companyTitle}</p>
-            {copy.companyList.map(([item, href]) => (
-              <a key={item} href={href} style={{ display: 'block', fontSize: 12, color: 'var(--c-sand)', textDecoration: 'none', marginBottom: 9, opacity: 0.6 }}>{item}</a>
+            {copy.companyList.map(([item, href], index) => (
+              <a key={item} href={href === '#' ? COMPANY_LINK_FALLBACKS[index] : href} style={{ display: 'block', fontSize: 12, color: 'var(--c-sand)', textDecoration: 'none', marginBottom: 9, opacity: 0.6 }}>{item}</a>
             ))}
           </div>
           <div>

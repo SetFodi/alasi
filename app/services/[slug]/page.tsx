@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import BodyClass from '@/components/BodyClass';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import LeadLink from '@/components/LeadLink';
 import RevealObserver from '@/components/RevealObserver';
 import { getSiteContent } from '@/lib/content-store';
 import {
@@ -37,6 +38,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   if (!page) notFound();
 
   const content = await getSiteContent();
+  const phoneHref = `tel:${content.home.contact.phone1.replace(/[^\d+]/g, '')}`;
   const jsonLd = JSON.stringify(getServiceJsonLd(page)).replace(/</g, '\\u003c');
   const relatedPages = page.related
     .map(relatedSlug => getServicePage(relatedSlug))
@@ -60,6 +62,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             <p className="service-lead">{page.summary}</p>
             <div className="service-hero-actions">
               <Link className="service-primary" href="/#contact">უფასო აზომვა</Link>
+              <LeadLink leadType="phone" className="service-secondary" href={phoneHref}>დარეკვა</LeadLink>
               <Link className="service-secondary" href="/fabrics">ქსოვილის არჩევა</Link>
             </div>
           </div>

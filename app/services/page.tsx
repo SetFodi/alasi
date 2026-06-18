@@ -3,6 +3,7 @@ import Link from 'next/link';
 import BodyClass from '@/components/BodyClass';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import LeadLink from '@/components/LeadLink';
 import RevealObserver from '@/components/RevealObserver';
 import { getSiteContent } from '@/lib/content-store';
 import { absoluteUrl, SITE_URL } from '@/lib/seo';
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
 
 export default async function ServicesPage() {
   const content = await getSiteContent();
+  const phoneHref = `tel:${content.home.contact.phone1.replace(/[^\d+]/g, '')}`;
 
   return (
     <>
@@ -48,6 +50,7 @@ export default async function ServicesPage() {
             </p>
             <div className="service-hero-actions">
               <Link className="service-primary" href="/#contact">უფასო კონსულტაცია</Link>
+              <LeadLink leadType="phone" className="service-secondary" href={phoneHref}>დარეკვა</LeadLink>
               <Link className="service-secondary" href="/fabrics">ქსოვილების ნახვა</Link>
             </div>
           </div>

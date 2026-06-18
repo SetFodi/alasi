@@ -79,6 +79,7 @@
       "titleAccent": "part of the architecture.",
       "body": "Book a free consultation. We'll visit your space, take measurements, and present options — at no cost.",
       "emailCta": "Get a Free Quote",
+      "phoneCta": "Call Now",
       "whatsappCta": "WhatsApp",
       "email": "alasicorp@gmail.com",
       "whatsappUrl": "https://wa.me/995595644788",
@@ -153,11 +154,11 @@
     ],
     "companyTitle": "Company",
     "companyList": [
-      ["About Alasi", "#"],
-      ["Projects", "#"],
-      ["Installation", "#"],
-      ["FAQ", "#"],
-      ["Contact", "#"]
+      ["About Alasi", "/#about"],
+      ["Projects", "/#projects"],
+      ["Installation", "/#process"],
+      ["FAQ", "/services"],
+      ["Contact", "/#contact"]
     ],
     "contactTitle": "Contact",
     "copyright": "© 2026 Alasi. All rights reserved.",

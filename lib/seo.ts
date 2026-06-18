@@ -76,6 +76,22 @@ export function getLocalBusinessJsonLd() {
     ],
     email: 'alasicorp@gmail.com',
     telephone: ['+995591060426', '+995591449093'],
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: '+995591060426',
+        contactType: 'sales',
+        areaServed: 'GE',
+        availableLanguage: ['ka', 'en'],
+      },
+      {
+        '@type': 'ContactPoint',
+        telephone: '+995591449093',
+        contactType: 'customer service',
+        areaServed: 'GE',
+        availableLanguage: ['ka', 'en'],
+      },
+    ],
     priceRange: '₾₾',
     address: {
       '@type': 'PostalAddress',
@@ -95,6 +111,14 @@ export function getLocalBusinessJsonLd() {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pergola shading systems' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Balcony and terrace shading' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Motorized outdoor shading systems' } },
+    ],
+    knowsAbout: [
+      'მარკიზები ბათუმში',
+      'პერგოლები ბათუმში',
+      'აივნის მარკიზები',
+      'კაფეს ტენტები',
+      'Retractable awnings',
+      'Pergola shading systems',
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
