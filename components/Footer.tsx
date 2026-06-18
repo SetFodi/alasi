@@ -1,4 +1,5 @@
 import defaultContent, { type SiteContent } from '@/lib/site-content';
+import { getServicePath, servicePages } from '@/lib/service-pages';
 
 function ContactLine({ item }: { item: string }) {
   const isEmail = item.includes('@');
@@ -53,6 +54,9 @@ export default function Footer({ content = defaultContent }: { content?: SiteCon
             <p style={{ fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--c-sand)', marginBottom: 18, opacity: 0.5 }}>{copy.productsTitle}</p>
             {copy.productsList.map(([item, href]) => (
               <a key={item} href={href} style={{ display: 'block', fontSize: 12, color: 'var(--c-sand)', textDecoration: 'none', marginBottom: 9, opacity: 0.6 }}>{item}</a>
+            ))}
+            {servicePages.map(page => (
+              <a key={page.slug} href={getServicePath(page.slug)} style={{ display: 'block', fontSize: 12, color: 'var(--c-sand)', textDecoration: 'none', marginBottom: 9, opacity: 0.6 }}>{page.title}</a>
             ))}
           </div>
           <div>

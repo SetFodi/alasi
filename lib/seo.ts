@@ -96,6 +96,16 @@ export function getLocalBusinessJsonLd() {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Balcony and terrace shading' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Motorized outdoor shading systems' } },
     ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Alasi shading services',
+      itemListElement: [
+        { '@type': 'Offer', url: absoluteUrl('/services/markizebi-batumshi'), itemOffered: { '@type': 'Service', name: 'მარკიზები ბათუმში' } },
+        { '@type': 'Offer', url: absoluteUrl('/services/pergolebi-batumshi'), itemOffered: { '@type': 'Service', name: 'პერგოლები ბათუმში' } },
+        { '@type': 'Offer', url: absoluteUrl('/services/aivnis-markizebi'), itemOffered: { '@type': 'Service', name: 'აივნის მარკიზები' } },
+        { '@type': 'Offer', url: absoluteUrl('/services/terasisa-da-kafes-tentebi'), itemOffered: { '@type': 'Service', name: 'ტერასისა და კაფეს ტენტები' } },
+      ],
+    },
     sameAs: [
       'https://www.instagram.com/alasi_awning/',
       'https://www.facebook.com/61575455356755',
