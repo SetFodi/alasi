@@ -1,47 +1,42 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { cookies } from 'next/headers';
 import './globals.css';
 import Preloader from '@/components/Preloader';
-import content from '@/lib/site-content';
+import { getSiteContent } from '@/lib/content-store';
+import { createSeoMetadata, getLocalBusinessJsonLd, GOOGLE_ADS_ID } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://alasi.ge'),
-  title: content.seo.homeTitle,
-  description: content.seo.homeDescription,
-  keywords: content.seo.keywords,
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    title: content.seo.homeTitle,
-    description: content.seo.homeDescription,
-    url: 'https://alasi.ge',
-    siteName: 'Alasi',
-    locale: 'ka_GE',
-    type: 'website',
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getSiteContent();
+  return createSeoMetadata(content, 'home');
+}
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get('NEXT_LOCALE')?.value === 'en' ? 'en' : 'ka';
+  const localBusinessJsonLd = getLocalBusinessJsonLd();
+  const localBusinessJson = JSON.stringify(localBusinessJsonLd).replace(/</g, '\\u003c');
+
   return (
-    <html lang="en">
+    <html lang={lang}>
       <head>
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js" async />
       </head>
       <body>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-18182079511" strategy="afterInteractive" />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`} strategy="afterInteractive" />
         <Script id="google-ads-tag" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'AW-18182079511');
+            gtag('config', '${GOOGLE_ADS_ID}');
           `}
         </Script>
+        <script
+          id="local-business-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: localBusinessJson }}
+        />
         <Preloader />
         {children}
       </body>

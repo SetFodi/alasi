@@ -4,25 +4,13 @@ import BodyClass from '@/components/BodyClass';
 import TechHero from '@/components/TechHero';
 import TechCatalog from '@/components/TechCatalog';
 import Footer from '@/components/Footer';
-import content from '@/lib/site-content';
 import { getSiteContent } from '@/lib/content-store';
+import { createSeoMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: content.seo.techTitle,
-  description: content.seo.techDescription,
-  keywords: content.seo.keywords,
-  alternates: {
-    canonical: '/tech',
-  },
-  openGraph: {
-    title: content.seo.techTitle,
-    description: content.seo.techDescription,
-    url: 'https://alasi.ge/tech',
-    siteName: 'Alasi',
-    locale: 'ka_GE',
-    type: 'website',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const siteContent = await getSiteContent();
+  return createSeoMetadata(siteContent, 'tech');
+}
 
 export const dynamic = 'force-dynamic';
 

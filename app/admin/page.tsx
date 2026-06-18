@@ -1,9 +1,22 @@
+import type { Metadata } from 'next';
 import { isAdminSession } from '@/lib/admin-auth';
 import { getSiteContentBoth } from '@/lib/content-store';
 import { getPricing } from '@/lib/pricing-store';
 import AdminEditor from './AdminEditor';
 import AdminLogin from './AdminLogin';
 import AdminPricing from './AdminPricing';
+
+export const metadata: Metadata = {
+  title: 'Alasi Admin',
+  alternates: {
+    canonical: '/admin',
+  },
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
+};
 
 export const dynamic = 'force-dynamic';
 

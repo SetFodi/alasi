@@ -3,27 +3,15 @@ import Navbar from '@/components/Navbar';
 import FabricHero from '@/components/FabricHero';
 import AdvanceCatalog from '@/components/AdvanceCatalog';
 import BodyClass from '@/components/BodyClass';
-import content from '@/lib/site-content';
 import { getSiteContent } from '@/lib/content-store';
 import { getPricing } from '@/lib/pricing-store';
 import type { CalculatorCopy } from '@/components/Calculator';
+import { createSeoMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: content.seo.fabricsTitle,
-  description: content.seo.fabricsDescription,
-  keywords: content.seo.keywords,
-  alternates: {
-    canonical: '/fabrics',
-  },
-  openGraph: {
-    title: content.seo.fabricsTitle,
-    description: content.seo.fabricsDescription,
-    url: 'https://alasi.ge/fabrics',
-    siteName: 'Alasi',
-    locale: 'ka_GE',
-    type: 'website',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const siteContent = await getSiteContent();
+  return createSeoMetadata(siteContent, 'fabrics');
+}
 
 export const dynamic = 'force-dynamic';
 

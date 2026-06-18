@@ -14,6 +14,32 @@ import {
   type FabricType,
   type ControlType,
 } from '@/lib/pricing';
+import { GOOGLE_ADS_ID } from '@/lib/seo';
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+const GOOGLE_ADS_CONVERSION_LABEL = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL;
+
+function trackLead(totalPrice: number) {
+  if (typeof window === 'undefined' || !window.gtag) return;
+
+  window.gtag('event', 'generate_lead', {
+    currency: 'GEL',
+    value: totalPrice,
+  });
+
+  if (GOOGLE_ADS_CONVERSION_LABEL) {
+    window.gtag('event', 'conversion', {
+      send_to: `${GOOGLE_ADS_ID}/${GOOGLE_ADS_CONVERSION_LABEL}`,
+      currency: 'GEL',
+      value: totalPrice,
+    });
+  }
+}
 
 export interface CalculatorCopy {
   eyebrow: string;
@@ -108,6 +134,7 @@ export default function Calculator({
     setSubmitting(false);
 
     if (res.ok) {
+      trackLead(typeof data.totalPrice === 'number' ? data.totalPrice : price);
       setStatusType('success');
       setStatusText(copy.success);
       setName('');

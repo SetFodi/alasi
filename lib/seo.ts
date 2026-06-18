@@ -1,0 +1,105 @@
+import type { Metadata } from 'next';
+import type { SiteContent } from './site-content';
+
+export const SITE_URL = 'https://www.alasi.ge';
+export const GOOGLE_ADS_ID = 'AW-18182079511';
+
+type SeoPage = 'home' | 'fabrics' | 'tech';
+
+const PAGE_CONFIG: Record<SeoPage, { path: string; title: keyof SiteContent['seo']; description: keyof SiteContent['seo'] }> = {
+  home: {
+    path: '/',
+    title: 'homeTitle',
+    description: 'homeDescription',
+  },
+  fabrics: {
+    path: '/fabrics',
+    title: 'fabricsTitle',
+    description: 'fabricsDescription',
+  },
+  tech: {
+    path: '/tech',
+    title: 'techTitle',
+    description: 'techDescription',
+  },
+};
+
+export function absoluteUrl(path = '/') {
+  return new URL(path, SITE_URL).toString();
+}
+
+export function createSeoMetadata(content: SiteContent, page: SeoPage): Metadata {
+  const config = PAGE_CONFIG[page];
+  const title = content.seo[config.title] as string;
+  const description = content.seo[config.description] as string;
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title,
+    description,
+    keywords: content.seo.keywords,
+    alternates: {
+      canonical: config.path,
+    },
+    openGraph: {
+      title,
+      description,
+      url: absoluteUrl(config.path),
+      siteName: 'Alasi',
+      locale: 'ka_GE',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary',
+      title,
+      description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
+
+export function getLocalBusinessJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HomeAndConstructionBusiness',
+    '@id': `${SITE_URL}/#business`,
+    name: 'Alasi',
+    alternateName: 'ალასი',
+    url: SITE_URL,
+    logo: absoluteUrl('/uploads/alasi-logo-transparent.png'),
+    image: [
+      absoluteUrl('/uploads/The_scene_features_an_awning_w_Nano_Banana_Pro_77361.jpg'),
+      absoluteUrl('/uploads/Capture_an_architectural_shot__Nano_Banana_Pro_18949.jpg'),
+    ],
+    email: 'alasicorp@gmail.com',
+    telephone: ['+995591060426', '+995591449093'],
+    priceRange: '₾₾',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Rustaveli 21',
+      addressLocality: 'Batumi',
+      addressRegion: 'Adjara',
+      postalCode: '6000',
+      addressCountry: 'GE',
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Batumi' },
+      { '@type': 'AdministrativeArea', name: 'Adjara' },
+      { '@type': 'Country', name: 'Georgia' },
+    ],
+    makesOffer: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Retractable awning installation' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pergola shading systems' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Balcony and terrace shading' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Motorized outdoor shading systems' } },
+    ],
+    sameAs: [
+      'https://www.instagram.com/alasi_awning/',
+      'https://www.facebook.com/61575455356755',
+      'https://t.me/alasi_awning_system',
+    ],
+  };
+}
