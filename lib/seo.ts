@@ -41,6 +41,10 @@ export function createSeoMetadata(content: SiteContent, page: SeoPage): Metadata
     alternates: {
       canonical: config.path,
     },
+    icons: {
+      icon: [{ url: '/uploads/alasi.jpg', type: 'image/jpeg', sizes: '1080x1080' }],
+      apple: [{ url: '/uploads/alasi.jpg', type: 'image/jpeg', sizes: '1080x1080' }],
+    },
     openGraph: {
       title,
       description,

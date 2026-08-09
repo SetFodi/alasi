@@ -1048,11 +1048,12 @@ body.nav-open { overflow: hidden; }
 .tech-hero h1 {
   color: var(--c-cream);
   font-family: var(--font-site);
-  font-size: clamp(54px,5vw,86px);
+  font-size: clamp(48px,3.45vw,66px);
   font-weight: 300;
   letter-spacing: 0;
   line-height: 0.96;
-  max-width: 740px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 .tech-hero-copy > p:not(.fabric-eyebrow) {
   color: rgba(237,228,212,0.74);
@@ -1477,6 +1478,9 @@ body.nav-open { overflow: hidden; }
   .tech-hero {
     padding-top: 112px;
   }
+  .tech-hero h1 {
+    font-size: clamp(54px,7vw,78px);
+  }
   .fabric-showcase {
     max-width: 920px;
     width: 100%;
@@ -1506,7 +1510,14 @@ body.nav-open { overflow: hidden; }
     --m-heading: clamp(26px, 7.2vw, 34px);
   }
 
-  .navbar, .navbar.scrolled { align-items: center; flex-wrap: nowrap; gap: 12px; padding: 10px 16px; }
+  .navbar, .navbar.scrolled {
+    align-items: center;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    flex-wrap: nowrap;
+    gap: 12px;
+    padding: 10px 16px;
+  }
   .navbar.scrolled { background: rgba(18,9,8,0.97); }
   .navbar.menu-open, .navbar.menu-open.scrolled { background: transparent; border-bottom-color: transparent; }
   .navbar .brand-link, .nav-actions { position: relative; z-index: 2; }
@@ -1517,6 +1528,7 @@ body.nav-open { overflow: hidden; }
     backdrop-filter: blur(20px);
     background: rgba(18,9,8,0.98);
     display: grid;
+    height: 100dvh;
     inset: 0;
     opacity: 0;
     overflow-y: auto;
