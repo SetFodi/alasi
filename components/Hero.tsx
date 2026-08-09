@@ -16,6 +16,9 @@ declare global {
   }
 }
 
+const MOBILE_QUERY = '(max-width: 820px)';
+const PARALLAX_FACTOR = 0.28;
+
 const FABRICS = [
   { id: 'green',  name: 'Classic Green Stripe', c1: '#2F5D3A', c2: '#F7EFE5', label: 'GS-01' },
   { id: 'sand',   name: 'Sand Beige',            c1: '#C9A97A', c2: '#E8D8BC', label: 'SB-02' },
@@ -55,11 +58,22 @@ export default function Hero({ content = defaultContent }: { content?: SiteConte
   const heroBgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Parallax is desktop-only: on mobile the background is not tall enough to
+    // translate without exposing an empty strip at the bottom of the hero.
+    const mobileQuery = window.matchMedia(MOBILE_QUERY);
     const onScroll = () => {
-      if (heroBgRef.current) heroBgRef.current.style.transform = `translateY(${window.scrollY * 0.28}px)`;
+      if (!heroBgRef.current) return;
+      heroBgRef.current.style.transform = mobileQuery.matches
+        ? ''
+        : `translateY(${window.scrollY * PARALLAX_FACTOR}px)`;
     };
+    onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    mobileQuery.addEventListener('change', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      mobileQuery.removeEventListener('change', onScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -84,21 +98,21 @@ export default function Hero({ content = defaultContent }: { content?: SiteConte
     <section id="hero" className="site-hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', transform: 'translateY(0px)' }} ref={heroBgRef} id="hero-bg">
         <img className="hero-bg-img" src="/uploads/The_scene_features_an_awning_w_Nano_Banana_Pro_77361.jpg" alt="" style={{ width: '100%', height: '115%', objectFit: 'cover', objectPosition: 'center 40%' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(26,14,13,0.88) 0%, rgba(26,14,13,0.55) 52%, rgba(26,14,13,0.25) 100%)' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,14,13,0.6) 0%, transparent 50%)' }} />
+        <div className="hero-scrim-side" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(26,14,13,0.88) 0%, rgba(26,14,13,0.55) 52%, rgba(26,14,13,0.25) 100%)' }} />
+        <div className="hero-scrim-base" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,14,13,0.6) 0%, transparent 50%)' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(74,39,36,0.15)' }} />
       </div>
 
       <div className="hero-layout" style={{ flex: 1, position: 'relative', zIndex: 2, display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'stretch', padding: '120px 64px 80px', gap: 40 }}>
         <div className="hero-copy" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <p style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--c-sand)', marginBottom: 32, opacity: 0.85 }}>
+          <p className="hero-eyebrow" style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--c-sand)', marginBottom: 32, opacity: 0.85 }}>
             {hero.eyebrow}
           </p>
           <h1 style={{ fontFamily: 'var(--tweak-font-heading)', fontSize: 'clamp(46px, 4.8vw, var(--tweak-hero-size))', fontWeight: 300, lineHeight: 1.04, color: 'var(--c-cream)', marginBottom: 28, letterSpacing: '0' }}>
             {hero.titleLine1}<br />{hero.titleLine2}<br />
             <em style={{ fontStyle: 'italic', color: 'var(--c-sand)' }}>{hero.titleAccent}</em>
           </h1>
-          <p style={{ fontSize: 14, color: 'var(--c-light-sand)', maxWidth: 520, marginBottom: 44, fontWeight: 300, lineHeight: 1.72, opacity: 0.88 }}>
+          <p className="hero-body" style={{ fontSize: 14, color: 'var(--c-light-sand)', maxWidth: 520, marginBottom: 44, fontWeight: 300, lineHeight: 1.72, opacity: 0.88 }}>
             {hero.body}
           </p>
           <div className="hero-actions" style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
