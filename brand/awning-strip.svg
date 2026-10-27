@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="52" viewBox="0 0 120 52">
+  <!-- Repeating awning valance, after the brand book's top border -->
+  <g stroke="none">
+    <path d="M0 0h30v34a15 15 0 0 1-30 0z" fill="#EBD6AE"/>
+    <path d="M30 0h30v34a15 15 0 0 1-30 0z" fill="#24533F"/>
+    <path d="M60 0h30v34a15 15 0 0 1-30 0z" fill="#F3EBDD"/>
+    <path d="M90 0h30v34a15 15 0 0 1-30 0z" fill="#163829"/>
+  </g>
+  <!-- fabric weave lines -->
+  <g stroke-linecap="round" stroke-width="1.4" opacity=".35">
+    <path d="M7 4v38M14 4v42M21 4v38" stroke="#CFB07C"/>
+    <path d="M37 4v38M44 4v42M51 4v38" stroke="#163829"/>
+    <path d="M67 4v38M74 4v42M81 4v38" stroke="#CFB07C"/>
+    <path d="M97 4v38M104 4v42M111 4v38" stroke="#24533F"/>
+  </g>
+  <!-- shadow under the rail -->
+  <rect x="0" y="5" width="120" height="5" fill="#2A2420" opacity=".14"/>
+  <rect x="0" y="0" width="120" height="5" fill="#2A2420"/>
+  <path d="M0 34a15 15 0 0 0 30 0a15 15 0 0 0 30 0a15 15 0 0 0 30 0a15 15 0 0 0 30 0" fill="none" stroke="#2A2420" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M30 6v28M60 6v28M90 6v28" stroke="#2A2420" stroke-width="1" opacity=".35"/>
+</svg>

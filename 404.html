@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="ka">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>გვერდი ვერ მოიძებნა — ალასი</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1E2B2F">
+<link rel="icon" type="image/png" href="/brand/favicon.png">
+<style>
+@font-face{font-family:"SS GEO BRO";src:url(/fonts/SSGeoBro-Regular.otf) format("opentype");font-weight:400;font-display:swap}
+@font-face{font-family:"SS GEO BRO";src:url(/fonts/SSGeoBro-Medium.otf) format("opentype");font-weight:500;font-display:swap}
+@font-face{font-family:"SS GEO BRO";src:url(/fonts/SSGeoBro-SemiBold.otf) format("opentype");font-weight:600;font-display:swap}
+@font-face{font-family:"SS GEO BRO";src:url(/fonts/SSGeoBro-Bold.otf) format("opentype");font-weight:700 800;font-display:swap}
+
+/* ---------- Brand tokens (ALASI brand book 2026) ---------- */
+:root{
+  --paper:#FBF8F2;      /* page */
+  --linen:#F3EBDD;      /* soft sections */
+  --sand:#EBD6AE;       /* awning stripe light */
+  --tan:#CFB07C;        /* awning stripe mid */
+  --ink:#2A2420;        /* text, outlines */
+  --ink-soft:#5E554D;
+  --slate:#1E2B2F;      /* dark surfaces */
+  --slate-2:#27383D;
+  --pine:#163829;
+  --green:#24533F;      /* actions */
+  --sun:#F2C14E;
+  --ember:#E8893A;
+  --line:rgba(42,36,32,.16);
+
+  --display:"SS GEO BRO","Noto Sans Georgian",system-ui,sans-serif;
+  --body:"SS GEO BRO","Noto Sans Georgian",system-ui,sans-serif;
+
+  --r:14px;
+  --wrap:1200px;
+  --gut:clamp(16px,4vw,40px);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+/* Letter spacing is set per element in em, so it scales with each element's own size (and reaches buttons, which do not inherit it). Later rules can widen it. */
+body *{letter-spacing:.07em}
+button,input,select,textarea{letter-spacing:.07em;word-spacing:.14em}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 19px/1.65 var(--body);letter-spacing:.07em;word-spacing:.14em;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ember);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--slate);color:var(--paper);padding:10px 16px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+
+/* Display type: condensed caps, like the brand wordmark */
+.display,h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:.08em;line-height:1.05;margin:0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:13px;letter-spacing:.18em;color:var(--green)}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor;border-radius:2px}
+.on-dark .eyebrow{color:var(--sun)}
+
+/* Awning valance */
+.awning{height:52px;background:url(/brand/awning-strip.svg) repeat-x left top/120px 52px}
+.awning.sm{height:34px;background-size:78px 34px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;border:2px solid var(--ink);font:600 15px/1 var(--body);letter-spacing:.08em;text-decoration:none;cursor:pointer;transition:transform .2s var(--ease),background-color .2s,color .2s,box-shadow .2s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--green);border-color:var(--green);color:var(--paper);box-shadow:3px 3px 0 var(--ink)}
+.btn-primary:hover{background:var(--pine);border-color:var(--pine)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.btn-sun{background:var(--sun);border-color:var(--sun);color:var(--ink);box-shadow:3px 3px 0 var(--paper)}
+.btn-sun:hover{background:#F6CF6E}
+.on-dark .btn-ghost{color:var(--paper);border-color:var(--paper)}
+.on-dark .btn-ghost:hover{background:var(--paper);color:var(--slate)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* ---------- Header ---------- */
+.site-head{position:sticky;top:0;z-index:50;background:var(--paper)}
+.site-head .awning{height:26px;background-size:60px 26px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+.nav .logo{flex:none}
+.nav .logo img{height:54px;width:auto}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.nav ul a{display:block;padding:10px 12px;white-space:nowrap;border-radius:999px;text-decoration:none;font-weight:500;font-size:15px;letter-spacing:.07em;transition:background-color .2s}
+.nav ul a:hover{background:var(--linen)}
+.nav .actions{display:flex;align-items:center;gap:10px}
+.nav .phone{font-weight:600;text-decoration:none;font-size:15px;white-space:nowrap}
+.menu-btn{display:none;width:48px;height:48px;border:2px solid var(--ink);border-radius:999px;background:none;cursor:pointer;align-items:center;justify-content:center}
+.menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;position:relative;transition:transform .25s var(--ease)}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
+.menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
+.site-head.open .menu-btn span{background:transparent}
+.site-head.open .menu-btn span::before{transform:translateY(6px) rotate(45deg)}
+.site-head.open .menu-btn span::after{transform:translateY(-6px) rotate(-45deg)}
+.site-head{border-bottom:1px solid var(--line)}
+
+@media (max-width:1240px){.nav .phone{display:none}}
+@media (max-width:1100px){
+  .nav ul,.nav .phone{display:none}
+  .menu-btn{display:inline-flex}
+  .site-head.open .nav ul{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:100%;background:var(--paper);padding:12px var(--gut) 24px;border-bottom:1px solid var(--line);box-shadow:0 16px 30px rgba(42,36,32,.08)}
+  .site-head.open .nav ul a{font-size:18px;padding:14px 8px;border-bottom:1px solid var(--line);border-radius:0}
+  .nav{position:relative}
+}
+@media (max-width:520px){.nav .actions .btn{display:none}.nav .logo img{height:46px}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding:clamp(40px,6vw,80px) 0 clamp(56px,8vw,100px);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(52px,8.4vw,112px);margin:18px 0 22px}
+.hero h1 .accent{color:var(--green)}
+.hero h1 .small{display:block;font-size:.46em;letter-spacing:.08em;color:var(--ink-soft);margin-top:10px}
+.hero p.lead{font-size:clamp(17px,1.5vw,19px);max-width:34em;color:var(--ink-soft);margin:0 0 30px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero .proof{display:flex;flex-wrap:wrap;gap:28px;margin-top:38px;padding-top:26px;border-top:1px solid var(--line)}
+.hero .proof b{display:block;font:700 34px/1 var(--display)}
+.hero .proof span{font-size:13px;color:var(--ink-soft);letter-spacing:.07em}
+
+.hero-art{position:relative}
+.frame{position:relative;border:2.5px solid var(--ink);border-radius:var(--r);overflow:hidden;background:var(--linen);box-shadow:8px 8px 0 var(--ink)}
+.frame img{width:100%;aspect-ratio:4/4.4;object-fit:cover;object-position:62% 50%}
+.hero-art .awning{position:absolute;left:-2px;right:-2px;top:-22px;z-index:2;border-radius:6px 6px 0 0}
+.badge{position:absolute;z-index:3;left:-26px;bottom:34px;display:flex;align-items:center;gap:14px;background:var(--slate);color:var(--paper);border-radius:999px;padding:10px 22px 10px 10px;box-shadow:4px 4px 0 var(--sun)}
+.badge .ring{width:56px;height:56px;border-radius:50%;border:2px solid var(--sun);display:grid;place-items:center}
+.badge .ring svg{width:28px;height:28px}
+.badge b{display:block;font:700 20px/1.1 var(--display);letter-spacing:.07em}
+.badge small{font-size:12px;opacity:.75;letter-spacing:.08em}
+.sunburst{position:absolute;right:-60px;top:-40px;width:240px;opacity:.9;z-index:-1}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-art{max-width:560px;margin:20px auto 0;width:100%}
+  .frame img{aspect-ratio:4/3.4}
+  .badge{left:12px;bottom:-24px}
+}
+
+/* ---------- Marquee ---------- */
+.marquee{background:var(--slate);color:var(--sand);overflow:hidden;border-block:2.5px solid var(--ink)}
+.marquee .track{display:flex;width:max-content;animation:scroll 38s linear infinite}
+.marquee ul{display:flex;list-style:none;margin:0;padding:18px 0}
+.marquee li{display:flex;align-items:center;gap:28px;padding-right:28px;font:600 18px/1 var(--display);letter-spacing:.14em;white-space:nowrap}
+.marquee li::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--sun)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- Sections ---------- */
+section{scroll-margin-top:110px}
+.sec{padding:clamp(72px,10vw,128px) 0}
+.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:24px;margin-bottom:clamp(36px,5vw,56px)}
+.sec-head h2{font-size:clamp(40px,5.6vw,72px);margin-top:14px}
+.sec-head p{max-width:30em;color:var(--ink-soft);margin:0}
+.linen{background:var(--linen)}
+.on-dark{background:var(--slate);color:var(--paper)}
+.on-dark p{color:rgba(251,248,242,.78)}
+
+/* Products */
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.card{position:relative;display:flex;flex-direction:column;background:var(--paper);border:2.5px solid var(--ink);border-radius:var(--r);overflow:hidden;text-decoration:none;transition:transform .3s var(--ease),box-shadow .3s var(--ease);box-shadow:0 0 0 var(--ink)}
+.card:hover{transform:translate(-4px,-4px);box-shadow:6px 6px 0 var(--ink)}
+.card .media{position:relative;overflow:hidden;border-bottom:2.5px solid var(--ink)}
+.card .media img{width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform .8s var(--ease)}
+.card:hover .media img{transform:scale(1.04)}
+.card .num{position:absolute;top:14px;left:14px;width:46px;height:46px;border-radius:50%;background:var(--paper);border:2px solid var(--ink);display:grid;place-items:center;font:700 18px/1 var(--display)}
+.card .body{padding:26px 28px 28px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card .tag{font-size:12px;font-weight:600;letter-spacing:.16em;color:var(--green)}
+.card h3{font-size:clamp(28px,2.6vw,36px)}
+.card p{margin:0;color:var(--ink-soft);font-size:16px}
+.card .more{margin-top:auto;padding-top:14px;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;letter-spacing:.08em}
+.card .more svg{width:18px;transition:transform .25s var(--ease)}
+.card:hover .more svg{transform:translateX(4px)}
+@media (max-width:760px){.products{grid-template-columns:1fr}}
+
+/* Fabric visualiser */
+.viz{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.viz-stage{background:transparent;border:2.5px solid var(--ink);border-radius:var(--r);padding:28px 24px 18px}
+.viz-stage{position:relative;padding:12px}
+.viz-stage model-viewer{display:block;width:100%;aspect-ratio:4/3;height:auto;background:transparent;border-radius:10px;--poster-color:transparent}
+.viz-controls{position:absolute;left:26px;bottom:22px;display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:600px){.viz-controls{position:static;padding:14px 4px 4px}}
+.viz-toggle{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px 0 14px;border-radius:999px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);font:500 14px/1 var(--body);letter-spacing:.08em;cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:transform .2s var(--ease),background-color .2s}
+.viz-toggle:hover{background:var(--sand)}
+.viz-toggle:active{transform:translateY(1px)}
+.viz-toggle svg{width:18px;height:18px;transition:transform .4s var(--ease)}
+.viz-toggle[aria-pressed="true"] svg{transform:rotate(180deg)}
+.viz-toggle .swatch{width:18px;height:18px;border-radius:50%;border:2px solid var(--ink);background:#1B1B1D}
+.viz-toggle#frame-toggle[aria-pressed="true"] .swatch{background:#F4F4F6}
+.viz-hint{position:absolute;right:26px;top:22px;display:flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.08em;color:var(--ink-soft);pointer-events:none}
+.viz-hint svg{width:16px;height:16px}
+.viz h2{font-size:clamp(40px,5vw,64px);margin:14px 0 16px}
+.viz p{color:var(--ink-soft);margin:0 0 26px}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:12px}
+.chip{display:flex;align-items:center;gap:12px;padding:8px 14px 8px 8px;border:2px solid var(--line);border-radius:999px;background:var(--paper);cursor:pointer;font:500 15px/1.2 var(--body);text-align:left;color:var(--ink);transition:border-color .2s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{border-color:var(--ink);background:var(--sand)}
+.chip i{width:34px;height:34px;border-radius:50%;border:2px solid var(--ink);flex:none}
+.viz .ref{margin-top:18px;font-size:13px;letter-spacing:.08em;color:var(--ink-soft)}
+@media (max-width:900px){.viz{grid-template-columns:1fr}}
+
+/* Why */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.feat{border:1.5px solid rgba(251,248,242,.18);border-radius:var(--r);padding:30px 24px;background:var(--slate-2)}
+.feat .ic{width:72px;height:72px;border-radius:50%;background:var(--slate);border:2px solid var(--sand);display:grid;place-items:center;margin-bottom:22px}
+.feat .ic svg{width:34px;height:34px}
+.feat h3{font-size:26px;margin-bottom:10px;color:var(--paper)}
+.feat p{margin:0;font-size:15.5px}
+@media (max-width:1100px){.why{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.why{grid-template-columns:1fr}}
+
+/* Projects */
+.projects{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.proj{position:relative;grid-column:span 4;border-radius:var(--r);overflow:hidden;border:2.5px solid var(--ink);background:var(--slate)}
+.proj:nth-child(1),.proj:nth-child(4){grid-column:span 8}
+.proj:nth-child(5),.proj:nth-child(6){grid-column:span 6}
+.proj img{width:100%;height:100%;min-height:300px;max-height:420px;object-fit:cover;transition:transform .8s var(--ease)}
+.proj:hover img{transform:scale(1.05)}
+.proj figcaption{position:absolute;left:14px;right:14px;bottom:14px;display:flex;flex-direction:column;gap:2px;background:var(--paper);border:2px solid var(--ink);border-radius:10px;padding:12px 16px}
+.proj figcaption span{font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--green)}
+.proj figcaption b{font:700 20px/1.15 var(--display);letter-spacing:.07em}
+.proj figure,.projects figure{margin:0}
+@media (max-width:900px){.proj,.proj:nth-child(n){grid-column:span 6}}
+@media (max-width:600px){.proj,.proj:nth-child(n){grid-column:span 12}.proj img{min-height:240px}}
+
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s;border-top:2.5px solid var(--ink)}
+.step{padding:30px 26px 10px 0;position:relative}
+.step + .step{padding-left:26px;border-left:1px solid var(--line)}
+.step .n{font:700 64px/1 var(--display);color:var(--green)}
+.step .n::after{content:"";display:block;width:34px;height:6px;margin-top:14px;background:url(/brand/awning-strip.svg) 0 0/24px 10px;border-radius:2px;display:none}
+.step h3{font-size:28px;margin:14px 0 10px}
+.step p{margin:0;color:var(--ink-soft);font-size:16px}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}.step:nth-child(3){padding-left:0;border-left:0}.step{border-bottom:1px solid var(--line);padding-bottom:28px}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.step + .step{padding-left:0;border-left:0}}
+
+/* Warranty band */
+.warranty{background:var(--sand);border-block:2.5px solid var(--ink)}
+.warranty .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(24px,4vw,56px);padding-block:clamp(40px,5vw,60px)}
+.warranty .shield{width:104px;height:104px;border-radius:50%;background:var(--slate);display:grid;place-items:center;box-shadow:4px 4px 0 var(--ink)}
+.warranty .shield svg{width:50px;height:50px}
+.warranty h2{font-size:clamp(36px,4.6vw,60px)}
+.warranty p{margin:8px 0 0;color:var(--ink);opacity:.8}
+.warranty .cert{background:var(--paper);border:2px solid var(--ink);border-radius:10px;padding:10px 14px}
+.warranty .cert img{height:60px;width:auto}
+@media (max-width:760px){.warranty .wrap{grid-template-columns:1fr;justify-items:start}}
+
+/* About */
+.about{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,88px);align-items:center}
+.about .frame img{aspect-ratio:4/4.6;object-position:50% 50%}
+.about h2{font-size:clamp(40px,5vw,66px);margin:14px 0 22px}
+.about p{color:var(--ink-soft);margin:0 0 16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.stat{border:2px solid var(--ink);border-radius:var(--r);padding:18px 18px 14px;background:var(--paper)}
+.stat b{display:block;font:700 48px/1 var(--display);color:var(--green)}
+.stat span{font-size:14px;letter-spacing:.08em;font-weight:500}
+@media (max-width:900px){.about{grid-template-columns:1fr}.about .frame{max-width:520px}}
+
+/* CTA */
+.cta{position:relative;text-align:center;padding:0 0 clamp(72px,9vw,110px)}
+.cta .awning{margin-bottom:clamp(56px,8vw,96px)}
+.cta .mark{width:150px;margin:0 auto 26px}
+.cta h2{font-size:clamp(42px,6.4vw,84px);max-width:14em;margin:14px auto 22px}
+.cta h2 em{font-style:normal;color:var(--sun)}
+.cta p{max-width:36em;margin:0 auto 34px}
+.cta .ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.cta .tel{margin-top:30px;font-size:15px;letter-spacing:.08em;opacity:.8}
+.cta .tel a{text-decoration:none;font-weight:600}
+
+/* Footer */
+.foot{background:var(--slate);color:rgba(251,248,242,.78);border-top:1px solid rgba(251,248,242,.12);font-size:15px}
+.foot .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding:64px 0 48px}
+.foot img.logo{height:70px;width:auto;margin-bottom:18px}
+.foot h4{margin:0 0 16px;font:600 14px/1 var(--display);letter-spacing:.16em;color:var(--sun)}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--paper);text-decoration:underline;text-underline-offset:3px}
+.socials{display:flex;gap:10px;margin-top:20px}
+.socials a{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(251,248,242,.5);display:grid;place-items:center;transition:background-color .2s,border-color .2s}
+.socials a:hover{background:var(--paper);border-color:var(--paper);color:var(--slate)}
+.socials svg{width:20px;height:20px}
+.foot .base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:22px 0 30px;border-top:1px solid rgba(251,248,242,.12);font-size:13px}
+@media (max-width:900px){.foot .cols{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.foot .cols{grid-template-columns:1fr}}
+
+/* Live awning edge: header valance split into stripes that sway under the cursor */
+.awning.live{display:flex;overflow:hidden;background:none}
+.awning.live i{flex:none;width:15px;height:100%;background:url(/brand/awning-strip.svg) repeat-x;background-size:60px 26px;transform-origin:50% 0;will-change:transform}
+
+/* Cursor follower (fine pointers only) */
+.cursor{position:fixed;left:0;top:0;z-index:70;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--green);pointer-events:none;opacity:0;display:grid;place-items:center;transition:width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease),background-color .3s,opacity .3s;box-shadow:0 0 0 2px var(--paper)}
+.cursor span{font:500 14px/1 var(--body);letter-spacing:.08em;color:var(--paper);opacity:0;transform:scale(.6);transition:opacity .25s,transform .35s var(--ease)}
+.cursor.on.big{opacity:1}
+.cursor.big{width:92px;height:92px;margin:-46px 0 0 -46px;background:var(--green);box-shadow:3px 3px 0 var(--ink),0 0 0 2px var(--ink)}
+.cursor.big span{opacity:1;transform:none}
+.has-cursor .card,.has-cursor .proj{cursor:none}
+
+/* Hero parallax layers */
+.hero [data-depth]{will-change:transform}
+
+/* Scroll mouse */
+.scroll-mouse{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-size:12px;letter-spacing:.14em}
+.scroll-mouse svg{width:26px;height:40px}
+.scroll-mouse .wheel{animation:wheel 1.8s var(--ease) infinite}
+@keyframes wheel{0%{transform:translateY(0);opacity:1}70%{transform:translateY(8px);opacity:0}100%{transform:translateY(0);opacity:0}}
+@media (max-width:900px){.scroll-mouse{display:none}}
+
+/* Hand-drawn underline on menu links */
+.nav ul a{position:relative}
+.nav ul a::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:8px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' preserveAspectRatio='none'%3E%3Cpath d='M2 5.5C14 2 22 7 34 4.2S56 2 68 4.8 88 6.5 98 3' fill='none' stroke='%2324533F' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat 0 0/100% 100%;clip-path:inset(0 100% 0 0);transition:clip-path .45s var(--ease)}
+.nav ul a:hover::after,.nav ul a:focus-visible::after{clip-path:inset(0 0 0 0)}
+.nav ul a:hover{background:transparent}
+
+/* Reveal on scroll */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.no-js .rv{opacity:1;transform:none}
+
+/* Floating WhatsApp */
+.fab{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--green);color:var(--paper);display:grid;place-items:center;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transition:transform .2s var(--ease)}
+.fab:hover{transform:translateY(-3px)}
+.fab svg{width:28px;height:28px}
+</style>
+<style>
+/* ---------- 404 page ---------- */
+.nf{padding:clamp(48px,7vw,96px) 0 clamp(72px,9vw,120px)}
+.nf .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+.nf h1{font-size:clamp(46px,6.6vw,84px);margin:16px 0 18px}
+.nf p.lead{color:var(--ink-soft);max-width:30em;margin:0 0 28px}
+.nf .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.nf .links{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line);font-size:15px}
+.nf .links a{text-decoration:underline;text-underline-offset:4px}
+.nf-art{position:relative;background:var(--paper);border:2.5px solid var(--ink);border-radius:var(--r);box-shadow:8px 8px 0 var(--ink);padding:26px 22px 30px;text-align:center;overflow:hidden}
+.nf-art svg{width:100%;height:auto;display:block}
+.nf-num{font:500 clamp(90px,14vw,170px)/.9 var(--display);letter-spacing:.06em;color:var(--green);margin-top:-6px}
+.nf-num span{color:var(--sun)}
+/* the valance gently swings as if the wind found the missing page */
+.nf-art .valance{transform-origin:120px 96px;transform-box:view-box;animation:nf-sway 3.2s ease-in-out infinite}
+@keyframes nf-sway{0%,100%{transform:skewX(0)}30%{transform:skewX(-6deg)}65%{transform:skewX(4deg)}}
+@media (prefers-reduced-motion:reduce){.nf-art .valance{animation:none}}
+@media (max-width:900px){.nf .grid{grid-template-columns:1fr}.nf-art{max-width:520px}}
+</style>
+</head>
+<body class="no-js">
+<script src="/js/loader.js" data-root="/"></script>
+<a class="skip" href="#main">გადასვლა შინაარსზე</a>
+
+<header class="site-head" id="top">
+  <div class="awning" aria-hidden="true"></div>
+  <div class="wrap nav">
+    <a class="logo" href="/" aria-label="ალასი — მთავარი"><img src="/brand/alasi-horizontal-colour.svg" alt="ALASI ალასი" width="126" height="54"></a>
+    <nav aria-label="მთავარი მენიუ">
+      <ul id="menu">
+        <li><a href="/index.html#products">პროდუქცია</a></li>
+        <li><a href="/index.html#projects">პროექტები</a></li>
+        <li><a href="/fabrics.html">ქსოვილები</a></li>
+        <li><a href="/pricing.html?system=pergola">პერგოლა</a></li>
+        <li><a href="/pricing.html">ფასები</a></li>
+        <li><a href="/index.html#about">ჩვენ შესახებ</a></li>
+        <li><a href="/index.html#contact">კონტაქტი</a></li>
+      </ul>
+    </nav>
+    <div class="actions">
+      <a class="phone" href="tel:+995591060426">+995 591 060 426</a>
+      <a class="btn btn-primary" href="/index.html#contact">კონსულტაცია</a>
+      <button class="menu-btn" type="button" aria-controls="menu" aria-expanded="false" aria-label="მენიუ"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="nf">
+    <div class="wrap grid">
+      <div>
+        <span class="eyebrow">შეცდომა 404</span>
+        <h1>გვერდი ვერ მოიძებნა</h1>
+        <p class="lead">როგორც ჩანს, ეს გვერდი ჩრდილში დაიმალა. შესაძლოა ბმული შეიცვალა ან მისამართი არასწორად აიკრიფა — დაბრუნდით მთავარ გვერდზე ან აირჩიეთ სასურველი განყოფილება.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="/">მთავარ გვერდზე
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="/index.html#contact">დაგვიკავშირდით</a>
+        </div>
+        <nav class="links" aria-label="სასარგებლო ბმულები">
+          <a href="/index.html#products">პროდუქცია</a>
+          <a href="/pricing.html">ფასები</a>
+          <a href="/pricing.html#custom">ფასის გამოთვლა</a>
+          <a href="/fabrics.html">ქსოვილები</a>
+          <a href="/index.html#projects">პროექტები</a>
+        </nav>
+      </div>
+      <div class="nf-art" aria-hidden="true">
+        <svg viewBox="0 0 240 130">
+          <rect x="12" y="10" width="216" height="16" rx="6" fill="#FBF8F2" stroke="#2A2420" stroke-width="3"/>
+          <g>
+            <path d="M20 24 L40 24 L32 96 L10 96Z" fill="#24533F"/><path d="M40 24 L60 24 L54 96 L32 96Z" fill="#F3EBDD"/>
+            <path d="M60 24 L80 24 L76 96 L54 96Z" fill="#24533F"/><path d="M80 24 L100 24 L98 96 L76 96Z" fill="#F3EBDD"/>
+            <path d="M100 24 L120 24 L120 96 L98 96Z" fill="#24533F"/><path d="M120 24 L140 24 L142 96 L120 96Z" fill="#F3EBDD"/>
+            <path d="M140 24 L160 24 L164 96 L142 96Z" fill="#24533F"/><path d="M160 24 L180 24 L186 96 L164 96Z" fill="#F3EBDD"/>
+            <path d="M180 24 L200 24 L208 96 L186 96Z" fill="#24533F"/><path d="M200 24 L220 24 L230 96 L208 96Z" fill="#F3EBDD"/>
+            <path d="M20 24 L220 24 L230 96 L10 96Z" fill="none" stroke="#2A2420" stroke-width="2.4" stroke-linejoin="round"/>
+          </g>
+          <g class="valance">
+            <path d="M10 95.5h22v8a11 11 0 0 1-22 0z" fill="#24533F"/><path d="M32 95.5h22v8a11 11 0 0 1-22 0z" fill="#F3EBDD"/>
+            <path d="M54 95.5h22v8a11 11 0 0 1-22 0z" fill="#24533F"/><path d="M76 95.5h22v8a11 11 0 0 1-22 0z" fill="#F3EBDD"/>
+            <path d="M98 95.5h22v8a11 11 0 0 1-22 0z" fill="#24533F"/><path d="M120 95.5h22v8a11 11 0 0 1-22 0z" fill="#F3EBDD"/>
+            <path d="M142 95.5h22v8a11 11 0 0 1-22 0z" fill="#24533F"/><path d="M164 95.5h22v8a11 11 0 0 1-22 0z" fill="#F3EBDD"/>
+            <path d="M186 95.5h22v8a11 11 0 0 1-22 0z" fill="#24533F"/><path d="M208 95.5h22v8a11 11 0 0 1-22 0z" fill="#F3EBDD"/>
+            <path d="M10 95.5h220v8a11 11 0 0 1-22 0a11 11 0 0 1-22 0a11 11 0 0 1-22 0a11 11 0 0 1-22 0a11 11 0 0 1-22 0a11 11 0 0 1-22 0a11 11 0 0 1-22 0a11 11 0 0 1-22 0a11 11 0 0 1-22 0a11 11 0 0 1-22 0z" fill="none" stroke="#2A2420" stroke-width="2.4" stroke-linejoin="round"/>
+            <rect x="8" y="92" width="224" height="6" rx="3" fill="#FBF8F2" stroke="#2A2420" stroke-width="2.4"/>
+          </g>
+        </svg>
+        <div class="nf-num">4<span>0</span>4</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <img class="logo" src="/brand/alasi-horizontal-colour-dark.svg" alt="ALASI ალასი" width="164" height="70" loading="lazy">
+        <p style="margin:0;max-width:24em">პრემიუმ კლასის გასაშლელი მარკიზების სისტემები ქართული სახლებისთვის, კაფეებისთვის და გარე სივრცეებისთვის.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/profile.php?id=61575455356755" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5a.5.5 0 0 1 .5-.5Z"/></svg></a>
+          <a href="https://www.instagram.com/alasi_awning/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor"/></svg></a>
+          <a href="https://t.me/alasi_awning_system" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M21 4 3 11l6 2.5M21 4l-3 16-9-6.5M21 4 9 13.5V19l3-3.5"/></svg></a>
+          <a href="https://wa.me/995595644788" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2Z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>პროდუქცია</h4>
+        <ul>
+          <li><a href="/pricing.html?system=cassette">კასეტური სისტემა</a></li>
+          <li><a href="/pricing.html?system=classic">კლასიკური სისტემა</a></li>
+          <li><a href="/pricing.html?system=wintent">ვინტენტის სისტემა</a></li>
+          <li><a href="/pricing.html?system=pergola">პერგოლები</a></li>
+          <li><a href="/fabrics.html">Advance ქსოვილები</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>კომპანია</h4>
+        <ul>
+          <li><a href="/index.html#about">ჩვენ შესახებ</a></li>
+          <li><a href="/index.html#projects">პროექტები</a></li>
+          <li><a href="/index.html#process">მონტაჟი</a></li>
+          <li><a href="/pricing.html">ფასები</a></li>
+          <li><a href="/index.html#contact">კონტაქტი</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>კონტაქტი</h4>
+        <ul>
+          <li><a href="tel:+995591060426">+995 591 060 426</a></li>
+          <li><a href="tel:+995591449093">+995 591 449 093</a></li>
+          <li><a href="mailto:alasicorp@gmail.com">alasicorp@gmail.com</a></li>
+          <li>რუსთაველის 21, ბათუმი 6000</li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <span>© 2026 Alasi. ყველა უფლება დაცულია.</span>
+      <span>Shading Systems &amp; Solutions · დაჩრდილვის სისტემები</span>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/995595644788" aria-label="მოგვწერეთ WhatsApp-ზე"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2Z"/></svg></a>
+
+<script>
+document.body.classList.remove('no-js');
+var head = document.querySelector('.site-head'), menuBtn = head.querySelector('.menu-btn');
+menuBtn.addEventListener('click', function () {
+  var open = head.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', open);
+});
+</script>
+</body>
+</html>

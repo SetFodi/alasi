@@ -1,0 +1,29 @@
+# ALASI website — Apache settings (place in the website's root folder)
+
+DirectoryIndex index.html
+
+# Branded "page not found" page
+ErrorDocument 404 /404.html
+
+# File types used by the site (3D models, font, images)
+AddType model/gltf-binary .glb
+AddType font/otf .otf
+AddType image/webp .webp
+AddType image/svg+xml .svg
+
+# Compress text files
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript image/svg+xml model/gltf-binary
+</IfModule>
+
+# Cache images, fonts and models for a week; pages always fresh
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 7 days"
+  ExpiresByType image/png "access plus 7 days"
+  ExpiresByType image/webp "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 7 days"
+  ExpiresByType font/otf "access plus 30 days"
+  ExpiresByType model/gltf-binary "access plus 7 days"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
