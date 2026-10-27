@@ -27,10 +27,15 @@ English
 
 Pages / გვერდები
 ----------------
-index.html     მთავარი გვერდი / home
-pricing.html   ფასები და კალკულატორი / prices and calculator
-fabrics.html   ქსოვილები, 3D ხედი / fabrics with 3D preview
-404.html       გვერდი ვერ მოიძებნა / page not found
+index.html     /          მთავარი გვერდი / home
+pricing.html   /pricing   ფასები და კალკულატორი / prices and calculator
+fabrics.html   /fabrics   ქსოვილები, 3D ხედი / fabrics with 3D preview
+404.html                  გვერდი ვერ მოიძებნა / page not found
+
+Search / ძიება
+--------------
+robots.txt     საძიებო სისტემების წვდომა და sitemap-ის მისამართი
+sitemap.xml    ინდექსირებადი კანონიკური გვერდები / canonical indexable pages
 
 Editing / რედაქტირება
 ---------------------
